@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     header: {
         backgroundColor: 'black',
         paddingTop: 50,
+        height: 200,
     },
 
     content: {
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     
     image: {
         width: '100%',
-        height: 60,
-        resizeMode: 'contain',
+        height: '100%',
+        resizeMode: 'cover',
     },
 })
