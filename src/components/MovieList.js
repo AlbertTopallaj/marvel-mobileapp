@@ -1,4 +1,5 @@
 import { FlatList, Text } from "react-native";
+import MovieCard from "./MovieCard";
 
 const movies = [
     {
@@ -13,19 +14,13 @@ const movies = [
     }
 ]
 
-function renderMovie({ item }){
-    return <>
-    <Text>{item.name}</Text>
-    </>
-}
-
 export default function MovieList(){
     return <>
     <FlatList
     data={movies}
     horizontal={true}
     keyExtractor={(item) => item.id}
-    renderItem={renderMovie}>
+    renderItem={({ item }) => <MovieCard movie={item}/>}>
     </FlatList>
     </>
 }

@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 export default function MovieCard({ movie }) {
     return <>
