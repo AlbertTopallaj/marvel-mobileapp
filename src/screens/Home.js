@@ -3,18 +3,21 @@ import Header from "../components/Header";
 import MovieList from "../components/MovieList";
 
 export default function Home() {
-    return <>
-    <Header/>
-    <ImageBackground style={styles.background} source={require('../pictures/avengers.jpg')}>
-    <MovieList/>
-    </ImageBackground>
-        
+  return (
+    <>
+      <Header />
+      <ImageBackground
+        style={styles.background}
+        source={require("../pictures/avengers.jpg")}
+      >
+        <MovieList />
+      </ImageBackground>
     </>
-  
+  );
 }
 
 const styles = StyleSheet.create({
-    background: {
-        flex: 1,
-    }
+  background: {
+    flex: 1,
+  },
 });
