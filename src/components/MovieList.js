@@ -1,4 +1,4 @@
-import { FlatList } from "react-native";
+import { FlatList, Text } from "react-native";
 
 const movies = [
     {
@@ -13,9 +13,9 @@ const movies = [
     }
 ]
 
-function renderMovie({ movie }){
+function renderMovie({ item }){
     return <>
-    
+    <Text>{item.name}</Text>
     </>
 }
 
@@ -24,6 +24,7 @@ export default function MovieList(){
     <FlatList
     data={movies}
     horizontal={true}
+    keyExtractor={(item) => item.id}
     renderItem={renderMovie}>
     </FlatList>
     </>
