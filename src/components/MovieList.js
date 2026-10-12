@@ -13,6 +13,11 @@ const movies = [
     }
 ]
 
+function renderMovie({ movie }){
+    return <>
+    
+    </>
+}
 
 export default function MovieList(){
     return <>
