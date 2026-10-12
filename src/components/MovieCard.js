@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.7)',
         borderRadius: 12,
         padding: 20,
-        width: 150, 
+        width: 300, 
         height: 200,
         justifyContent: 'flex-end',
     },

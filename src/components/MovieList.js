@@ -1,4 +1,4 @@
-import { FlatList, Text } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 import MovieCard from "./MovieCard";
 
 const movies = [
@@ -19,8 +19,18 @@ export default function MovieList(){
     <FlatList
     data={movies}
     horizontal={true}
+    contentContainerStyle={styles.list}
     keyExtractor={(item) => item.id}
     renderItem={({ item }) => <MovieCard movie={item}/>}>
     </FlatList>
     </>
 }
+
+const styles = StyleSheet.create({
+    list: {
+        gap: 200,
+        padding: 50,
+        alignItems: 'center',
+        paddingBottom: 200,
+    }
+})
