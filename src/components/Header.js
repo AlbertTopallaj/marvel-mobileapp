@@ -3,6 +3,7 @@ import { Text, View, StyleSheet } from 'react-native';
 export default function Header() {
      return <>
      <View style={styles.header}>
+        
         <Text style={styles.content}>Marvel Movies</Text>
      </View>
      </>
