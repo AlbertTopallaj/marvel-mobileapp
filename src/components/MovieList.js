@@ -20,7 +20,6 @@ export default function MovieList(){
     data={movies}
     horizontal={true}
     renderItem={renderMovie}>
-
     </FlatList>
     </>
 }
