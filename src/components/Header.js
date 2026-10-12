@@ -1,10 +1,9 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 
 export default function Header() {
      return <>
      <View style={styles.header}>
-        
-        <Text style={styles.content}>Marvel Movies</Text>
+        <Image style={styles.image} source={require('../pictures/marvellogo.webp')}></Image>
      </View>
      </>
 };
@@ -12,7 +11,7 @@ export default function Header() {
 const styles = StyleSheet.create({
     header: {
         backgroundColor: 'black',
-        paddingTop: '100',
+        paddingTop: 50,
     },
 
     content: {
@@ -20,5 +19,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 50,
         paddingBottom: 20,
-    }
+    },
+    
+    image: {
+        width: '100%',
+        height: 60,
+        resizeMode: 'contain',
+    },
 })
