@@ -1,6 +1,7 @@
 import { ImageBackground, StyleSheet } from "react-native";
 import Header from "../components/Header";
 import MovieList from "../components/MovieList";
+import Register from "./Register";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         source={require("../pictures/avengers.jpg")}
       >
         <MovieList />
+        <Register/>
       </ImageBackground>
     </>
   );
