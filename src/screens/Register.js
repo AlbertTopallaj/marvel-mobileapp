@@ -1,4 +1,6 @@
-export default function Register(){
+export default function Register() {
+    // TODO: Add components
     return <>
+
     </>
 }
