@@ -12,7 +12,6 @@ export default function Home() {
         source={require("../pictures/avengers.jpg")}
       >
         <MovieList />
-        <Register/>
       </ImageBackground>
     </>
   );
