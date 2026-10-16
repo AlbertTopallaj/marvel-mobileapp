@@ -8,7 +8,7 @@ export default function LoginButton({ navigation }){
 
     return <>
     <Pressable
-    onPress={() => navigateToLogin()}>
+    onPress={() => navigateToLogin(navigation)}>
         <Text>Har du redan ett konto? Tryck här.</Text>
 
     </Pressable>
