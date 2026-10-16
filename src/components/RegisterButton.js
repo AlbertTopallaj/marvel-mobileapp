@@ -1,20 +1,16 @@
 import { Pressable } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function RegisterButton(){
+export default function RegisterButton({ navigation }){
 
-    function navigateToRegister(){
-        
+    function navigateToRegister(navigation){
+        navigation.navigate("Register");
     }
 
     return <>
     
-    <Pressable onPress={navigateToRegister()}>
-        <Ionicons name="log-in-outline" size={30} color="black">
-
-        </Ionicons>
+    <Pressable onPress={() => navigateToRegister()}>
+        <Ionicons name="log-in-outline" size={30} color="black" />
     </Pressable>
-
-
     </>
 }
