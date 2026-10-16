@@ -1,10 +1,10 @@
 import LoginButton from "../components/LoginButton";
 import RegisterForm from "../components/RegisterForm";
 
-export default function Register() {
+export default function Register({ navigation }) {
     // TODO: Add components
     return <>
     <RegisterForm/>
-    <LoginButton/>
+    <LoginButton navigation={navigation}/>
     </>
 }
