@@ -9,7 +9,7 @@ export default function RegisterButton({ navigation }){
 
     return <>
     
-    <Pressable onPress={() => navigateToRegister()}>
+    <Pressable onPress={() => navigateToRegister(navigation)}>
         <Ionicons name="log-in-outline" size={30} color="black" />
     </Pressable>
     </>
