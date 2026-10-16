@@ -9,7 +9,6 @@ export default function RegisterForm(){
 
     <TextInput
     placeholder="Ange ett lösenord">
-
     </TextInput>
 
     </>
