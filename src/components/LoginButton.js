@@ -1,4 +1,4 @@
-import { Pressable } from "react-native";
+import { Pressable, Text } from "react-native";
 
 export default function LoginButton({ navigation }){
 
