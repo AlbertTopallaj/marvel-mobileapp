@@ -18,6 +18,16 @@ export default function RegisterForm(){
 }
 
 const styles = StyleSheet.create({
-
-    
+    container: {
+        padding: 24,
+        gap: 12,
+    },
+    input: {
+        height: 48,
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderRadius: 8,
+        paddingHorizontal: 12,
+        fontSize: 16,
+    }
 })
