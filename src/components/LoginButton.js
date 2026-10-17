@@ -10,7 +10,7 @@ export default function LoginButton({ navigation }){
     <Pressable
     onPress={() => navigateToLogin(navigation)}
     style={styles.navigateButton}>
-        <Text style={styles.loginText}>Har du redan ett konto? Tryck här.</Text>
+        <Text style={styles.loginText}>Har du redan ett konto?</Text>
     </Pressable>
     </>
 }
@@ -18,5 +18,13 @@ export default function LoginButton({ navigation }){
 const styles = StyleSheet.create({
     loginText: {
         textAlign: "center",
+        color: "white",
+        fontSize: 15,
+    },
+    navigateButton: {
+        backgroundColor: "blue",
+        padding: 14,
+        borderRadius: 8,
+        marginHorizontal: 24,
     }
 })
