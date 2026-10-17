@@ -12,6 +12,9 @@ export default function LoginButton({ navigation }){
     style={styles.navigateButton}>
         <Text style={styles.loginText}>Har du redan ett konto?</Text>
     </Pressable>
+    <Pressable>
+        <Text style={styles.registerText}>Registera</Text>
+    </Pressable>
     </>
 }
 
