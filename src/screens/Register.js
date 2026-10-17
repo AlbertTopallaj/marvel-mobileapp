@@ -1,4 +1,4 @@
-import RegisterButton from "../components/NavigateToRegisterButton";
+import RegisterButton from "../components/RegisterButton";
 import RegisterForm from "../components/RegisterForm";
 
 export default function Register({ navigation }) {
