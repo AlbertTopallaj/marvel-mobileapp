@@ -1,4 +1,4 @@
-import { Pressable, Text } from "react-native";
+import { Pressable, StyleSheet, Text } from "react-native";
 
 export default function LoginButton({ navigation }){
 
@@ -9,8 +9,13 @@ export default function LoginButton({ navigation }){
     return <>
     <Pressable
     onPress={() => navigateToLogin(navigation)}>
-        <Text>Har du redan ett konto? Tryck här.</Text>
-
+        <Text style={styles.loginText}>Har du redan ett konto? Tryck här.</Text>
     </Pressable>
     </>
 }
+
+const styles = StyleSheet.create({
+    loginText: {
+        textAlign: "center",
+    }
+})
