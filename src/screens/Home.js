@@ -1,13 +1,13 @@
 import { ImageBackground, StyleSheet } from "react-native";
 import Header from "../components/Header";
 import MovieList from "../components/MovieList";
-import RegisterButton from "../components/RegisterButton";
+import NavigateToRegisterForm from "../components/NavigateToRegisterButton";
 
 export default function Home({ navigation }) {
   return (
     <>
       <Header />
-      <RegisterButton navigation={navigation}/>
+      <NavigateToRegisterForm navigation={navigation}/>
       <ImageBackground
         style={styles.background}
         source={require("../pictures/avengers.jpg")}

@@ -1,16 +1,48 @@
-import { Pressable } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Pressable, StyleSheet, Text } from "react-native";
 
 export default function RegisterButton({ navigation }){
 
-    function navigateToRegister(navigation){
-        navigation.navigate("Register");
+    function navigateToLogin(navigation) {
+        navigation.navigate("Login");
     }
 
     return <>
-    
-    <Pressable onPress={() => navigateToRegister(navigation)}>
-        <Ionicons name="log-in-outline" size={30} color="black" />
+    <Pressable
+    onPress={() => navigateToLogin(navigation)}
+    style={styles.navigateButton}>
+        <Text style={styles.loginText}>Har du redan ett konto?</Text>
+    </Pressable>
+    <Pressable
+    style={styles.registerButton}>
+        <Text style={styles.registerText}>Registera</Text>
     </Pressable>
     </>
 }
+
+const styles = StyleSheet.create({
+    loginText: {
+        textAlign: "center",
+        color: "white",
+        fontSize: 15,
+    },
+    navigateButton: {
+        backgroundColor: "blue",
+        padding: 14,
+        borderRadius: 8,
+        marginHorizontal: 24,
+    },
+
+    registerButton: {
+        marginTop: 25,
+        backgroundColor: "green",
+        padding: 14,
+        borderRadius: 8,
+        marginHorizontal: 24,
+    },
+
+    registerText: {
+        textAlign: "center",
+        color: "white",
+        fontSize: 15,
+    }
+})

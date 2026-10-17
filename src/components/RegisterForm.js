@@ -7,12 +7,14 @@ export default function RegisterForm(){
         <Text style={styles.header}>Registera dig</Text>
     <TextInput
     style={styles.input}
-    placeholder="Ange ett användarnamn">
+    placeholder="Ange ett användarnamn"
+    placeholderTextColor="white">
 
     </TextInput>
 
     <TextInput
     placeholder="Ange ett lösenord"
+    placeholderTextColor="white"
     style={styles.input}>
     </TextInput>
     </View>
@@ -30,11 +32,14 @@ const styles = StyleSheet.create({
         height: 48,
         borderWidth: 1,
         borderColor: "#ccc",
+        backgroundColor: "black",
         borderRadius: 8,
         paddingHorizontal: 12,
         fontSize: 16,
+        color: "white",
     },
     header: {
         fontSize: 25,
+        color: "black",
     }
 })

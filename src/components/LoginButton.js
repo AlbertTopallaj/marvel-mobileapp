@@ -1,46 +1,44 @@
-import { Pressable, StyleSheet, Text } from "react-native";
+import { Pressable, Text, StyleSheet } from "react-native";
 
-export default function LoginButton({ navigation }){
+export default function LoginButtonForm({ navigation }) {
 
-    function navigateToLogin(navigation) {
+    function navigateToRegister(navigation) {
         navigation.navigate("Login");
     }
 
     return <>
     <Pressable
-    onPress={() => navigateToLogin(navigation)}
+    onPress={() => navigateToRegister(navigation)}
     style={styles.navigateButton}>
-        <Text style={styles.loginText}>Har du redan ett konto?</Text>
+        <Text style={styles.registerText}>Har du inget konto?</Text>
     </Pressable>
     <Pressable
-    style={styles.registerButton}>
-        <Text style={styles.registerText}>Registera</Text>
+    style={styles.loginButton}>
+        <Text style={styles.loginText}>Logga in</Text>
     </Pressable>
     </>
 }
 
 const styles = StyleSheet.create({
-    loginText: {
-        textAlign: "center",
-        color: "white",
-        fontSize: 15,
-    },
     navigateButton: {
         backgroundColor: "blue",
         padding: 14,
         borderRadius: 8,
         marginHorizontal: 24,
     },
-
-    registerButton: {
+    loginButton: {
         marginTop: 25,
         backgroundColor: "green",
         padding: 14,
         borderRadius: 8,
         marginHorizontal: 24,
     },
-
     registerText: {
+        textAlign: "center",
+        color: "white",
+        fontSize: 15,
+    },
+    loginText: {
         textAlign: "center",
         color: "white",
         fontSize: 15,
