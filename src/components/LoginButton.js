@@ -12,7 +12,8 @@ export default function LoginButton({ navigation }){
     style={styles.navigateButton}>
         <Text style={styles.loginText}>Har du redan ett konto?</Text>
     </Pressable>
-    <Pressable>
+    <Pressable
+    style={styles.registerButton}>
         <Text style={styles.registerText}>Registera</Text>
     </Pressable>
     </>
@@ -29,5 +30,20 @@ const styles = StyleSheet.create({
         padding: 14,
         borderRadius: 8,
         marginHorizontal: 24,
+    },
+
+    registerButton: {
+        marginTop: 25,
+        backgroundColor: "green",
+        color: "white",
+        padding: 14,
+        borderRadius: 8,
+        marginHorizontal: 24,
+    },
+
+    registerText: {
+        textAlign: "center",
+        color: "white",
+        fontSize: 15,
     }
 })
