@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet } from "react-native";
+import { Pressable, Text, StyleSheet } from "react-native";
 
 export default function LoginButtonForm({ navigation }) {
 
@@ -30,8 +30,7 @@ const styles = StyleSheet.create({
         marginTop: 25,
         backgroundColor: "green",
         padding: 14,
-        borderRadius: 8,a,
+        borderRadius: 8,
         marginHorizontal: 24,
     },
-    
 })
