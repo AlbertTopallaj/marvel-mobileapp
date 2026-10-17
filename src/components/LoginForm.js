@@ -1,4 +1,4 @@
-import { Pressable, TextInput, View } from "react-native";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function LoginForm() {
     return <>
@@ -13,10 +13,31 @@ export default function LoginForm() {
         <TextInput
         style={styles.input}
         placeholder="Ange ditt lösenord">
-
-
+    
         </TextInput>
         <Pressable></Pressable>
     </View>
     </>
 }
+
+const styles = StyleSheet.create({
+
+    container: {
+        marginTop: 150,
+        justifyContent: "center",
+        padding: 24,
+        gap: 12,
+    },
+    
+    input: {
+        height: 48,
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderRadius: 8,
+        paddingHorizontal: 12,
+        fontSize: 16,
+    },
+    header: {
+        fontSize: 25,
+    }
+})
