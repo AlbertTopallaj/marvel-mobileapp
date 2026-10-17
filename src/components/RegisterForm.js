@@ -10,8 +10,8 @@ export default function RegisterForm(){
     </TextInput>
 
     <TextInput
-    placeholder="Ange ett lösenord">
-    style={styles.input}
+    placeholder="Ange ett lösenord"
+    style={styles.input}>
     </TextInput>
     </View>
     </>
@@ -19,6 +19,8 @@ export default function RegisterForm(){
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
+        justifyContent: "center",
         padding: 24,
         gap: 12,
     },
