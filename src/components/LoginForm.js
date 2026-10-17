@@ -6,13 +6,15 @@ export default function LoginForm() {
         <Text style={styles.header}>Logga in</Text>
         <TextInput
         style={styles.input}
-        placeholder="Ange ditt användarnamn">
+        placeholder="Ange ditt användarnamn"
+        placeholderTextColor="white">
 
         </TextInput>
 
         <TextInput
         style={styles.input}
-        placeholder="Ange ditt lösenord">
+        placeholder="Ange ditt lösenord"
+        placeholderTextColor="white">
     
         </TextInput>
         <Pressable></Pressable>
@@ -36,6 +38,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         paddingHorizontal: 12,
         fontSize: 16,
+        backgroundColor: "black",
     },
     header: {
         fontSize: 25,
