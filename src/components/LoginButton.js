@@ -33,4 +33,14 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         marginHorizontal: 24,
     },
+    registerText: {
+        textAlign: "center",
+        color: "white",
+        fontSize: 15,
+    },
+    loginText: {
+        textAlign: "center",
+        color: "white",
+        fontSize: 15,
+    }
 })
