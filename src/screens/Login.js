@@ -1,4 +1,4 @@
-import { ImageBackground, Text } from "react-native";
+import { ImageBackground, StyleSheet } from "react-native";
 import LoginForm from "../components/LoginForm";
 import LoginButton from "../components/LoginButton";
 
