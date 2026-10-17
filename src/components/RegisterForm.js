@@ -21,7 +21,7 @@ export default function RegisterForm(){
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        marginTop: 150,
         justifyContent: "center",
         padding: 24,
         gap: 12,
@@ -33,5 +33,8 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         paddingHorizontal: 12,
         fontSize: 16,
+    },
+    header: {
+        fontSize: 25,
     }
 })
