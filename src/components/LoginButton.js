@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
     registerButton: {
         marginTop: 25,
         backgroundColor: "green",
-        color: "white",
         padding: 14,
         borderRadius: 8,
         marginHorizontal: 24,
