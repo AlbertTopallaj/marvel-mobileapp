@@ -1,8 +1,10 @@
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function RegisterForm(){
     return <>
+
     <View style={styles.container}>
+        <Text style={styles.header}>Registera dig</Text>
     <TextInput
     style={styles.input}
     placeholder="Ange ett användarnamn">
