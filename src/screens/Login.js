@@ -7,7 +7,7 @@ export default function Login({ navigation }){
     <ImageBackground
     style={styles.background}
     source={require("../pictures/avengers.jpg")}>
-    <LoginForm></LoginForm>
+    <LoginForm navigation={navigation}></LoginForm>
     </ImageBackground>
     </>
 }
