@@ -18,6 +18,8 @@ export default function LoginForm({ navigation }) {
                 body: JSON.stringify({ username, password }),
             });
             const data = await response.json();
+            setUsername("");
+            setPassword("");
 
         } catch (error) {
             setError("Något gick fel.")
