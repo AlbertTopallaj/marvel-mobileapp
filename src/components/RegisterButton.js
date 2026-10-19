@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Pressable, StyleSheet, Text } from "react-native";
 
-export default function RegisterButton({ navigation }){
+export default function RegisterButton({ navigation, onRegister }){
 
     function navigateToLogin(navigation) {
         navigation.navigate("Login");
@@ -17,7 +17,8 @@ export default function RegisterButton({ navigation }){
         <Text style={styles.loginText}>Har du redan ett konto?</Text>
     </Pressable>
     <Pressable
-    style={styles.registerButton}>
+    style={styles.registerButton}
+    onPress={onRegister}>
         <Text style={styles.registerText}>Registera</Text>
     </Pressable>
     </>

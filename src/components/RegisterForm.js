@@ -17,8 +17,7 @@ export default function RegisterForm({ navigation }){
                 },
                 body: JSON.stringify({ username, password }),
         });
-        const text = await response.text();
-        console.log(text);
+        const data = await response.json();
         } catch (error) {
             // TILLFÄLLIG FELHANTERING, EJ FÄRDIGSTÄLLD
             console.log(error);
