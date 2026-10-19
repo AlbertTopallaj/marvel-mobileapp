@@ -18,6 +18,8 @@ export default function RegisterForm({ navigation }){
                 body: JSON.stringify({ username, password }),
         });
         const data = await response.json();
+        setUsername("");
+        setPassword("");
         } catch (error) {
             // TILLFÄLLIG FELHANTERING, EJ FÄRDIGSTÄLLD
             console.log(error);
