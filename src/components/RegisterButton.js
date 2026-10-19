@@ -7,6 +7,7 @@ export default function RegisterButton({ navigation }){
         navigation.navigate("Login");
     }
 
+    // Nya standard, denna kommer jag att använda till nästa PR.
     const navigation = useNavigation();
 
     return <>
