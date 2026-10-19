@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function RegisterForm({ navigation }){
     const [username, setUsername] = useState("");
-    
+    const [password, setPassword] = useState("");
 
 
     return <>
