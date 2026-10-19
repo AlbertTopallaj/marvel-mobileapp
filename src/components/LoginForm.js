@@ -46,7 +46,7 @@ export default function LoginForm() {
         onChangeText={setPassword}>
     
         </TextInput>
-        <LoginButton onLogin={handleLogin}/>
+        <LoginButton onLogin={handleLogin} navigation={navigation}/>
     </View>
     </>
 }
