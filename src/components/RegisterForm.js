@@ -17,7 +17,7 @@ export default function RegisterForm({ navigation }){
         });
         const data = await response.json();
         } catch (error) {
-            // TILLFÄLLIG FELHANTERING, EJ FÄRDIGSTÄLLDS
+            // TILLFÄLLIG FELHANTERING, EJ FÄRDIGSTÄLLD
             console.log(error);
         }
     }
