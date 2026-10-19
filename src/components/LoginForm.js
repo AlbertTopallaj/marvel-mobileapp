@@ -7,6 +7,23 @@ export default function LoginForm() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
+    const handleLogin = async () => {
+        try {
+            const response = await fetch("http://10.0.2.2:3000/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "applications/json",
+                },
+                body: JSON.stringify({ username, password }),
+            });
+            const data = await response.json();
+
+        } catch (error) {
+            setError("Något gick fel.")
+            console.log(error);
+        }
+    };
+
 
     return <>
     <View style={styles.container}>
