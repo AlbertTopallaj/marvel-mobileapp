@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { Pressable, StyleSheet, Text } from "react-native";
 
 export default function RegisterButton({ navigation }){
@@ -5,6 +6,8 @@ export default function RegisterButton({ navigation }){
     function navigateToLogin(navigation) {
         navigation.navigate("Login");
     }
+
+    const navigation = useNavigation();
 
     return <>
     <Pressable
