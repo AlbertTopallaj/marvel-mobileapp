@@ -1,6 +1,10 @@
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function LoginForm() {
+
+    const [username, setUsername] = useState("");
+
+
     return <>
     <View style={styles.container}>
         <Text style={styles.header}>Logga in</Text>
