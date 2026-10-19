@@ -1,9 +1,13 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import RegisterButton from "./RegisterButton";
+import { useState } from "react";
 
 export default function RegisterForm({ navigation }){
-    return <>
+    const [username, setUsername] = useState("");
+    
 
+
+    return <>
     <View style={styles.container}>
         <Text style={styles.header}>Registera dig</Text>
     <TextInput
