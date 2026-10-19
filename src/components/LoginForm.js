@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function LoginForm() {
 
     const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
 
     return <>
