@@ -6,7 +6,7 @@ export default function RegisterForm({ navigation }){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleLogin = async () => {
+    const handleRegister = async () => {
         try {
             const response = await fetch("http://10.0.2.2:3000/user/register", {
                 method: "POST",
@@ -41,7 +41,7 @@ export default function RegisterForm({ navigation }){
     value={password}
     onChangeText={setPassword}>
     </TextInput>
-    <RegisterButton navigation={navigation}/>
+    <RegisterButton onRegister={handleRegister} navigation={navigation}/>
     </View>
     </>
 }
