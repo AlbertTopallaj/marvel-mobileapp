@@ -12,7 +12,7 @@ export default function LoginForm() {
             const response = await fetch("http://10.0.2.2:3000/user/login", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "applications/json",
+                    "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ username, password }),
             });
