@@ -45,8 +45,7 @@ export default function LoginForm() {
         onChangeText={setPassword}>
     
         </TextInput>
-        <Pressable onPress={handleLogin}>
-        </Pressable>
+        
     </View>
     </>
 }
