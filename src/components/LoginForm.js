@@ -32,7 +32,8 @@ export default function LoginForm() {
         style={styles.input}
         placeholder="Ange ditt användarnamn"
         placeholderTextColor="white"
-        value={username}>
+        value={username}
+        onChangeText={setUsername}>
 
         </TextInput>
 
@@ -40,7 +41,8 @@ export default function LoginForm() {
         style={styles.input}
         placeholder="Ange ditt lösenord"
         placeholderTextColor="white"
-        value={password}>
+        value={password}
+        onChangeText={setPassword}>
     
         </TextInput>
         <Pressable onPress={handleLogin}>
