@@ -28,14 +28,18 @@ export default function RegisterForm({ navigation }){
     <TextInput
     style={styles.input}
     placeholder="Ange ett användarnamn"
-    placeholderTextColor="white">
+    placeholderTextColor="white"
+    value={username}
+    onChangeText={setUsername}>
 
     </TextInput>
 
     <TextInput
     placeholder="Ange ett lösenord"
     placeholderTextColor="white"
-    style={styles.input}>
+    style={styles.input}
+    value={password}
+    onChangeText={setPassword}>
     </TextInput>
     <RegisterButton navigation={navigation}/>
     </View>
