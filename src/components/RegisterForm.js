@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import RegisterButton from "./RegisterButton";
 
-export default function RegisterForm(){
+export default function RegisterForm({ navigation }){
     return <>
 
     <View style={styles.container}>
