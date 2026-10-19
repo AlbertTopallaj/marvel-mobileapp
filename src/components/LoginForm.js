@@ -31,17 +31,20 @@ export default function LoginForm() {
         <TextInput
         style={styles.input}
         placeholder="Ange ditt användarnamn"
-        placeholderTextColor="white">
+        placeholderTextColor="white"
+        value={username}>
 
         </TextInput>
 
         <TextInput
         style={styles.input}
         placeholder="Ange ditt lösenord"
-        placeholderTextColor="white">
+        placeholderTextColor="white"
+        value={password}>
     
         </TextInput>
-        <Pressable></Pressable>
+        <Pressable onPress={handleLogin}>
+        </Pressable>
     </View>
     </>
 }
