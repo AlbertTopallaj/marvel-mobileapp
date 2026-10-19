@@ -6,7 +6,7 @@ export default function MovieList(){
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        fetch("http:/10.0.2.2:8080/movie/find")
+        fetch("http://10.0.2.2:8080/movie/find")
         .then(res => res.json())
         .then(data => setMovies(data))
         .catch(error => console.log(error));
