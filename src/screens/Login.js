@@ -2,13 +2,12 @@ import { ImageBackground, StyleSheet } from "react-native";
 import LoginForm from "../components/LoginForm";
 import LoginButton from "../components/LoginButton";
 
-export default function Login(){
+export default function Login({ navigation }){
     return <>
     <ImageBackground
     style={styles.background}
     source={require("../pictures/avengers.jpg")}>
-    <LoginForm></LoginForm>
-    <LoginButton></LoginButton>
+    <LoginForm navigation={navigation}></LoginForm>
     </ImageBackground>
     </>
 }

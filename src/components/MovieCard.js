@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 export default function MovieCard({ movie }) {
     return <>
     <View style={styles.card}>
-        <Text style={styles.title}>{movie.name}</Text>
+        <Text style={styles.title}>{movie.title}</Text>
     </View>
     </>
 }

@@ -1,23 +1,54 @@
+import { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import LoginButton from "./LoginButton";
 
-export default function LoginForm() {
+export default function LoginForm({ navigation }) {
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+
+    const handleLogin = async () => {
+        try {
+            const response = await fetch("http://10.0.2.2:8080/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, password }),
+            });
+            const data = await response.json();
+            setUsername("");
+            setPassword("");
+
+        } catch (error) {
+            setError("Något gick fel.")
+            console.log(error);
+        }
+    };
+
+
     return <>
     <View style={styles.container}>
         <Text style={styles.header}>Logga in</Text>
         <TextInput
         style={styles.input}
         placeholder="Ange ditt användarnamn"
-        placeholderTextColor="white">
+        placeholderTextColor="white"
+        value={username}
+        onChangeText={setUsername}
+        />
 
-        </TextInput>
 
         <TextInput
         style={styles.input}
         placeholder="Ange ditt lösenord"
-        placeholderTextColor="white">
+        placeholderTextColor="white"
+        value={password}
+        onChangeText={setPassword}
+        />
     
-        </TextInput>
-        <Pressable></Pressable>
+        <LoginButton onLogin={handleLogin} navigation={navigation}/>
     </View>
     </>
 }
@@ -39,6 +70,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 12,
         fontSize: 16,
         backgroundColor: "black",
+        color: "white",
     },
     header: {
         fontSize: 25,
