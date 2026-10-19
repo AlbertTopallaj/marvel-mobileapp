@@ -13,7 +13,8 @@ export default function LoginButton({ navigation, onLogin}) {
         <Text style={styles.registerText}>Har du inget konto?</Text>
     </Pressable>
     <Pressable
-    style={styles.loginButton}>
+    style={styles.loginButton}
+    onPress={onLogin}>
         <Text style={styles.loginText}>Logga in</Text>
     </Pressable>
     </>
