@@ -6,6 +6,21 @@ export default function RegisterForm({ navigation }){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    const handleLogin = async () => {
+        try {
+            const response = await fetch("http://10.0.2.2:3000/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, password }),
+        });
+        const data = await response.json();
+        } catch (error) {
+            // TILLFÄLLIG FELHANTERING, EJ FÄRDIGSTÄLLDS
+            console.log(error);
+        }
+    }
 
     return <>
     <View style={styles.container}>
