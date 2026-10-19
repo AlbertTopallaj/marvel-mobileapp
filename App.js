@@ -4,9 +4,9 @@
   import Register from "./src/screens/Register";
 import Login from "./src/screens/Login";
 
-  export default function App() {
+   const Stack = createNativeStackNavigator();
 
-    const Stack = createNativeStackNavigator();
+  export default function App() {
 
     return <>
     <NavigationContainer>
