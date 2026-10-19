@@ -20,6 +20,7 @@ export default function RegisterButton({ navigation }){
     style={styles.registerButton}>
         <Text style={styles.registerText}>Registera</Text>
     </Pressable>
+
     </>
 }
 

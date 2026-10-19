@@ -1,4 +1,5 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
+import RegisterButton from "./RegisterButton";
 
 export default function RegisterForm(){
     return <>
@@ -14,9 +15,10 @@ export default function RegisterForm(){
 
     <TextInput
     placeholder="Ange ett lösenord"
-    placeholderTextColor="white"
+    placeholderTextColor="whit  e"
     style={styles.input}>
     </TextInput>
+    <RegisterButton/>
     </View>
     </>
 }
