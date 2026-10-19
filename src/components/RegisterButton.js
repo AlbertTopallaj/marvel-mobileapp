@@ -8,7 +8,7 @@ export default function RegisterButton({ navigation }){
     }
 
     // Nya standard, denna kommer jag att använda till nästa PR.
-    const navigation = useNavigation();
+    //const navigation = useNavigation();
 
     return <>
     <Pressable
@@ -20,7 +20,6 @@ export default function RegisterButton({ navigation }){
     style={styles.registerButton}>
         <Text style={styles.registerText}>Registera</Text>
     </Pressable>
-
     </>
 }
 
