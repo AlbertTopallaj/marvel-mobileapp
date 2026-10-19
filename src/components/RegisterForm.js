@@ -15,7 +15,7 @@ export default function RegisterForm(){
 
     <TextInput
     placeholder="Ange ett lösenord"
-    placeholderTextColor="whit  e"
+    placeholderTextColor="white"
     style={styles.input}>
     </TextInput>
     <RegisterButton/>
