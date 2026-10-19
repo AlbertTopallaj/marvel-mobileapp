@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import LoginButton from "./LoginButton";
 
 export default function LoginForm() {
 
@@ -45,7 +46,7 @@ export default function LoginForm() {
         onChangeText={setPassword}>
     
         </TextInput>
-        
+        <LoginButton onLogin={handleLogin}/>
     </View>
     </>
 }
