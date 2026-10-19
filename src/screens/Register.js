@@ -9,7 +9,6 @@ export default function Register({ navigation }) {
     style={styles.background}
     source={require("../pictures/avengers.jpg")}>
     <RegisterForm/>
-    <RegisterButton navigation={navigation}/>
     </ImageBackground>
     </>
 }
