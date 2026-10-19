@@ -8,7 +8,7 @@ export default function RegisterForm({ navigation }){
 
     const handleLogin = async () => {
         try {
-            const response = await fetch("http://10.0.2.2:3000/user/login", {
+            const response = await fetch("http://10.0.2.2:3000/user/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
