@@ -1,6 +1,6 @@
 import { Pressable, Text, StyleSheet } from "react-native";
 
-export default function LoginButton({ navigation }) {
+export default function LoginButton({ navigation, onLogin}) {
 
     function navigateToRegister(navigation) {
         navigation.navigate("Login");
