@@ -18,7 +18,7 @@ export default function RegisterForm(){
     placeholderTextColor="white"
     style={styles.input}>
     </TextInput>
-    <RegisterButton/>
+    <RegisterButton navigation={navigation}/>
     </View>
     </>
 }
