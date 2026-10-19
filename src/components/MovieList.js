@@ -1,5 +1,6 @@
 import { FlatList, StyleSheet } from "react-native";
 import MovieCard from "./MovieCard";
+import { useState } from "react";
 
 const movies = [
     {
@@ -15,6 +16,8 @@ const movies = [
 ]
 
 export default function MovieList(){
+    const [movies, setMovies] = useState([]);
+
     return <>
     <FlatList
     data={movies}
