@@ -30,17 +30,18 @@ export default function RegisterForm({ navigation }){
     placeholder="Ange ett användarnamn"
     placeholderTextColor="white"
     value={username}
-    onChangeText={setUsername}>
+    onChangeText={setUsername}
+    />
 
-    </TextInput>
 
     <TextInput
     placeholder="Ange ett lösenord"
     placeholderTextColor="white"
     style={styles.input}
     value={password}
-    onChangeText={setPassword}>
-    </TextInput>
+    onChangeText={setPassword}
+    />
+
     <RegisterButton onRegister={handleRegister} navigation={navigation}/>
     </View>
     </>

@@ -34,18 +34,18 @@ export default function LoginForm({ navigation }) {
         placeholder="Ange ditt användarnamn"
         placeholderTextColor="white"
         value={username}
-        onChangeText={setUsername}>
+        onChangeText={setUsername}
+        />
 
-        </TextInput>
 
         <TextInput
         style={styles.input}
         placeholder="Ange ditt lösenord"
         placeholderTextColor="white"
         value={password}
-        onChangeText={setPassword}>
+        onChangeText={setPassword}
+        />
     
-        </TextInput>
         <LoginButton onLogin={handleLogin} navigation={navigation}/>
     </View>
     </>
