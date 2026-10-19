@@ -7,8 +7,6 @@ export default function RegisterForm({ navigation }){
     const [password, setPassword] = useState("");
 
     const handleRegister = async () => {
-            console.log(username);
-    console.log(password);
         try {
             const response = await fetch("http://10.0.2.2:8080/user/register", {
                 method: "POST",
