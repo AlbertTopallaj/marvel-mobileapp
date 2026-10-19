@@ -8,7 +8,7 @@ export default function Login(){
     style={styles.background}
     source={require("../pictures/avengers.jpg")}>
     <LoginForm></LoginForm>
-    <LoginButton></LoginButton>
+    <LoginButton navigation={navigation} onLogin={handleLogin}></LoginButton>
     </ImageBackground>
     </>
 }
