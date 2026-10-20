@@ -1,7 +1,7 @@
 import { View } from "react-native";
 
 export default function ProfileCard(){
-    const {greeting, setGreeting} = useState("");
+    const [greeting, setGreeting] = useState("");
 
     return <>
     <View>
