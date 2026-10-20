@@ -1,8 +1,10 @@
 import { Pressable, View, Text, StyleSheet } from "react-native";
 import { useAuth } from "../context/AuthContext";
+import { useState } from "react";
 
 export default function LogoutButton() {
     const { logout } = useAuth();
+    const [visible, setVisible] = useState(false);
 
     return <>
     <View style={styles.card}>
