@@ -2,12 +2,22 @@ import { useState } from "react";
 import { View } from "react-native";
 
 export default function ProfileCard(){
-    const [greeting, setGreeting] = useState("");
     const [username, setUsername] = useState("");
+    const hour = new Date().getHours;
+
+
+    let greeting
+    if(hour < 12){
+        greeting = "Good morning!";
+    } else if(hour < 18){
+        greeting = "Good day";
+    } else {
+        greeting = "Good evening";
+    }
 
     return <>
     <View>
-        <Text>{greeting} {user}</Text>
+        <Text>{greeting} {username}</Text>
     </View>
     </>
 }
