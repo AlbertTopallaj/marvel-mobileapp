@@ -47,7 +47,16 @@ import { Ionicons } from "@expo/vector-icons";
 
         <Tab.Screen
         name="Login"
-        component={Login}>
+        component={Login}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons
+            name="log-in"
+            size={24}
+            color="black"
+            />
+          )
+        }}>
         </Tab.Screen>
         { user && (
         <Tab.Screen
