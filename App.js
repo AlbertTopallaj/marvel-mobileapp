@@ -3,13 +3,15 @@
   import { createNativeStackNavigator } from "@react-navigation/native-stack";
   import Register from "./src/screens/Register";
   import Login from "./src/screens/Login";
-import Profile from "./src/screens/Profile";
+  import Profile from "./src/screens/Profile";
+  import AuthProvider from "./src/context/AuthContext";
 
    const Stack = createNativeStackNavigator();
 
   export default function App() {
 
     return <>
+    <AuthProvider>
     <NavigationContainer>
       <Stack.Navigator>
 
@@ -35,6 +37,7 @@ import Profile from "./src/screens/Profile";
 
       </Stack.Navigator>
     </NavigationContainer>
+    </AuthProvider>
     </>
   }
 
