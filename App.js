@@ -91,7 +91,8 @@ import { Ionicons } from "@expo/vector-icons";
 }
 
 function RootNavigator(){
-  
+  const { user } = useAuth();
+  return user ? <AppNavigator/> : <NonAuthNavigator/>
 }
 
   export default function App() {
@@ -99,7 +100,7 @@ function RootNavigator(){
     return <>
     <AuthProvider>
     <NavigationContainer>
-      <AppNavigator></AppNavigator>
+      <RootNavigator></RootNavigator>
     </NavigationContainer>
     </AuthProvider>
     </>
