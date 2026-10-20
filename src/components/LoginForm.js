@@ -20,7 +20,7 @@ export default function LoginForm({ navigation }) {
                 body: JSON.stringify({ username, password }),
             });
             const data = await response.json();
-            login(data.username, data.token);
+            login(data.id, data.username, data.token);
             setUsername("");
             setPassword("");
 
