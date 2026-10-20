@@ -13,7 +13,22 @@ export default function LogoutButton() {
         </Pressable>
     </View>
 
-    <Modal></Modal>
+    <Modal
+    visible={visible}
+    transparent={true}
+    animationType="fade">
+        <View style={styles.overlay}>
+            <View style={styles.modal}>
+                <Text style={styles.modalText}>Vill du verkligen logga ut?</Text>
+                <Pressable style={styles.confirmButton}>
+                    <Text style={styles.text}>Ja, logga ut</Text>
+                </Pressable>
+                <Pressable style={styles.cancelButton}>
+                    <Text style={styles.cancelText}>Avbryt</Text>
+                </Pressable>
+            </View>
+        </View>
+    </Modal>
 
     </>
 }
