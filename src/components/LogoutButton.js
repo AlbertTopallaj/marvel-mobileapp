@@ -1,13 +1,35 @@
-import { Pressable, View } from "react-native";
+import { Pressable, View, Text, StyleSheet } from "react-native";
+import { useAuth } from "../context/AuthContext";
 
 export default function LogoutButton() {
     const { logout } = useAuth();
 
     return <>
-    <View>
-        <Pressable onPress={() => }>
-            <Text>Logga ut</Text>
+    <View style={styles.card}>
+        <Pressable style={styles.button} onPress={logout}>
+            <Text style={styles.text}>Logga ut</Text>
         </Pressable>
     </View>
     </>
 }
+
+const styles = StyleSheet.create({
+    card: {
+        flex: 1,
+        justifyContent: "flex-end",
+        bottom: 20,
+        paddingHorizontal: 24,
+        paddingTop: 16,
+    },
+    button: {
+        backgroundColor: "red",
+        padding: 14,
+        borderRadius: 8,
+        alignItems: "center",
+    },
+    text: {
+        color: "white",
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+})
