@@ -11,8 +11,7 @@ import { Ionicons } from "@expo/vector-icons";
 
    function AppNavigator(){
     const { user } = useAuth();
-
-    // TODO: FIXA IKONER TILL TABS
+    
     // TODO: TA BORT LOGIN OCH REGISTER NÄR MAN ÄR INLOGGAD
     // TODO: TA BORT UTLOGGNING VID REFRESH
     return <>
