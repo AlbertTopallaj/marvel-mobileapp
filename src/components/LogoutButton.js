@@ -52,4 +52,35 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "bold",
     },
+    overlay: {
+        flex: 1,
+        backgroundColor: "white",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    modal: {
+        backgroundColor: "white",
+        borderRadius: 12,
+        padding: 24,
+        width: "80%",
+        gap: 12,
+    },
+    modalText: {
+        fontSize: 16,
+        textAlign: "center",
+    },
+    confirmButton: {
+        backgroundColor: "red",
+        padding: 12,
+        borderRadius: 0,
+        alignItems: "center",
+    },
+    cancelButton: {
+        padding: 12,
+        alignItems: "center", 
+    },
+    cancelText: {
+        color: "gray",
+        fontSize: 16,
+    }
 })
