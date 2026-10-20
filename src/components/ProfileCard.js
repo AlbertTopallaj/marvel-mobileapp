@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { useAuth } from "../context/AuthContext";
 
 export default function ProfileCard(){
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     card: {
 
     },
-    
+
     greeting: {
 
     },
