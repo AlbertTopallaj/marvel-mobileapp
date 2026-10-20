@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import { useAuth } from "../context/AuthContext";
 
 export default function ProfileCard(){
     const { user } = useAuth();
-    const hour = new Date().getHours;
+    const hour = new Date().getHours();
 
 
     let greeting = "";
@@ -17,8 +17,19 @@ export default function ProfileCard(){
     }
 
     return <>
-    <View>
-        <Text>{greeting} {user?.username}</Text>
+    <View style={styles.card}>
+        <Text style={styles.greeting}>{greeting} {user?.username}</Text>
     </View>
     </>
 }
+
+const styles = StyleSheet.create({
+    card: {
+
+    },
+    
+    greeting: {
+
+    },
+
+});
