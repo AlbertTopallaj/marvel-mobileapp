@@ -14,25 +14,25 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
     return <>
     <Tab.Navigator>
-       <Stack.Screen
+       <Tab.Screen
         name="Home"
         component={Home}>
-        </Stack.Screen>
+        </Tab.Screen>
 
-        <Stack.Screen
+        <Tab.Screen
         name="Register"
         component={Register}>
-        </Stack.Screen>
+        </Tab.Screen>
 
-        <Stack.Screen
+        <Tab.Screen
         name="Login"
         component={Login}>
-        </Stack.Screen>
+        </Tab.Screen>
         { user && (
-        <Stack.Screen
+        <Tab.Screen
         name="Profile"
         component={Profile}>
-        </Stack.Screen>
+        </Tab.Screen>
         )}
     </Tab.Navigator>
     </>
