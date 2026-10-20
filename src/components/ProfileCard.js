@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { View } from "react-native";
+import { useAuth } from "../context/AuthContext";
 
 export default function ProfileCard(){
+    const { user } = useAuth();
     const hour = new Date().getHours;
 
 
