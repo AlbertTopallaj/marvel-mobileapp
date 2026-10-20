@@ -18,7 +18,7 @@ export default function ProfileCard(){
 
     return <>
     <View>
-        <Text>{greeting} {username}</Text>
+        <Text>{greeting} {user?.username}</Text>
     </View>
     </>
 }
