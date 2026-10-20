@@ -6,9 +6,6 @@ export default function ProfileInfo(){
     style={styles.background}
     source={require("../pictures/avengers.jpg")}
     >
-        <View>
-            
-        </View>
     </ImageBackground>
     </>
 }
