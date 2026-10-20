@@ -1,5 +1,6 @@
 export default function DeleteAccountButton(){
     const [visible, setVisible] = useState(false);
+    const { user, deleteAccount } = useAuth();
 
     return <>
     <View style={styles.card}>
