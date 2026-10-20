@@ -1,4 +1,4 @@
-import { Pressable, View, Text, StyleSheet } from "react-native";
+import { Pressable, View, Text, StyleSheet, Modal } from "react-native";
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
 
@@ -12,6 +12,9 @@ export default function LogoutButton() {
             <Text style={styles.text}>Logga ut</Text>
         </Pressable>
     </View>
+
+    <Modal></Modal>
+
     </>
 }
 
