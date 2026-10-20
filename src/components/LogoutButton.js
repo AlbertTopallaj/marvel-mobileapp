@@ -8,7 +8,7 @@ export default function LogoutButton() {
 
     return <>
     <View style={styles.card}>
-        <Pressable style={styles.button} onPress={logout}>
+        <Pressable style={styles.button} onPress={() => setVisible(true)}>
             <Text style={styles.text}>Logga ut</Text>
         </Pressable>
     </View>
