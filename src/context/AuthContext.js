@@ -17,7 +17,7 @@ export function AuthProvider({ children }) {
 
     const deleteAccount = async (userId) => {
         const request = await fetch(
-            `http://10.0.2.2:8080/user/delete/{userId}`,
+            `http://10.0.2.2:8080/user/delete/${userId}`,
             {
                 method: "DELETE",
                 headers: {

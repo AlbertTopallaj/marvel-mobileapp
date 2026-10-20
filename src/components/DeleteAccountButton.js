@@ -1,6 +1,21 @@
+import { Alert, Modal, Pressable, StyleSheet, Text, View } from "react-native";
+import { useAuth } from "../context/AuthContext";
+import { useState } from "react";
+
+
 export default function DeleteAccountButton(){
     const [visible, setVisible] = useState(false);
     const { user, deleteAccount } = useAuth();
+
+    const handleDelete = async () => {
+        try {
+            await deleteAccount(user.id);
+            setVisible(false);
+            Alert.alert("Klart", "Ditt konto har blivit raderat");
+        } catch (error) {
+            Alert.alert("Fel",  error.message);
+        }
+    }
 
     return <>
     <View style={styles.card}>
@@ -16,7 +31,7 @@ export default function DeleteAccountButton(){
             <View style={styles.overlay}>
                 <View style={styles.modal}>
                     <Text style={styles.modalText}>Vill du verkligen radera ditt konto?</Text>
-                    <Pressable onPress={logout} style={styles.confirmButton}>
+                    <Pressable onPress={handleDelete} style={styles.confirmButton}>
                         <Text style={styles.text}>Ja, radera mitt konto</Text>
                     </Pressable>
                     <Pressable onPress={() => setVisible(false)} style={styles.cancelButton}>
@@ -31,7 +46,6 @@ export default function DeleteAccountButton(){
     
     const styles = StyleSheet.create({
         card: {
-            flex: 1,
             justifyContent: "flex-end",
             bottom: 20,
             paddingHorizontal: 24,
