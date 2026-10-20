@@ -61,7 +61,16 @@ import { Ionicons } from "@expo/vector-icons";
         { user && (
         <Tab.Screen
         name="Profile"
-        component={Profile}>
+        component={Profile}
+         options={{
+          tabBarIcon: () => (
+            <Ionicons
+            name="person-circle"
+            size={24}
+            color="black"
+            />
+          )
+        }}>
         </Tab.Screen>
         )}
     </Tab.Navigator>
