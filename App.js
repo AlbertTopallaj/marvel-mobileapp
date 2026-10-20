@@ -4,18 +4,16 @@
   import Register from "./src/screens/Register";
   import Login from "./src/screens/Login";
   import Profile from "./src/screens/Profile";
-  import AuthProvider from "./src/context/AuthContext";
+  import { AuthProvider, useAuth} from "./src/context/AuthContext";
 
    const Stack = createNativeStackNavigator();
 
-  export default function App() {
+   function AppNavigator(){
+    const { user } = useAuth();
 
     return <>
-    <AuthProvider>
-    <NavigationContainer>
-      <Stack.Navigator>
-
-        <Stack.Screen
+    <Stack.Navigator>
+       <Stack.Screen
         name="Home"
         component={Home}>
         </Stack.Screen>
@@ -29,13 +27,22 @@
         name="Login"
         component={Login}>
         </Stack.Screen>
-
+        { user && (
         <Stack.Screen
         name="Profile"
         component={Profile}>
         </Stack.Screen>
+        )}
+    </Stack.Navigator>
+    </>
+   }
 
-      </Stack.Navigator>
+  export default function App() {
+
+    return <>
+    <AuthProvider>
+    <NavigationContainer>
+      <AppNavigator></AppNavigator>
     </NavigationContainer>
     </AuthProvider>
     </>
