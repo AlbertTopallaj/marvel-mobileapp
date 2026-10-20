@@ -27,6 +27,11 @@ import Login from "./src/screens/Login";
         component={Login}>
         </Stack.Screen>
 
+        <Stack.Screen
+        name="Profile"
+        component={Profile}>
+        </Stack.Screen>
+
       </Stack.Navigator>
     </NavigationContainer>
     </>
