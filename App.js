@@ -5,8 +5,9 @@
   import Login from "./src/screens/Login";
   import Profile from "./src/screens/Profile";
   import { AuthProvider, useAuth} from "./src/context/AuthContext";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-   const Stack = createNativeStackNavigator();
+   const Tab = createBottomTabNavigator();
 
    function AppNavigator(){
     const { user } = useAuth();
