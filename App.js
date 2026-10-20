@@ -13,7 +13,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
     const { user } = useAuth();
 
     return <>
-    <Stack.Navigator>
+    <Tab.Navigator>
        <Stack.Screen
         name="Home"
         component={Home}>
@@ -34,7 +34,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
         component={Profile}>
         </Stack.Screen>
         )}
-    </Stack.Navigator>
+    </Tab.Navigator>
     </>
    }
 
