@@ -25,11 +25,14 @@ export default function ProfileCard(){
 
 const styles = StyleSheet.create({
     card: {
-
+        position: "absolute",
+        bottom: 40,
+        left: 24,
     },
-
     greeting: {
-
+        color: "white",
+        fontSize: 24,
+        fontWeight: "bold",
     },
 
 });
