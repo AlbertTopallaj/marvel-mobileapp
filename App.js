@@ -5,6 +5,7 @@
   import Profile from "./src/screens/Profile";
   import { AuthProvider, useAuth} from "./src/context/AuthContext";
   import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from "@expo/vector-icons";
 
    const Tab = createBottomTabNavigator();
 
@@ -18,12 +19,30 @@
     <Tab.Navigator>
        <Tab.Screen
         name="Home"
-        component={Home}>
+        component={Home}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons
+            name="home"
+            size={24}
+            color="black"
+            />
+          )
+        }}>
         </Tab.Screen>
 
         <Tab.Screen
         name="Register"
-        component={Register}>
+        component={Register}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons
+            name="person-add"
+            size={24}
+            color="black"
+            />
+          )
+        }}>
         </Tab.Screen>
 
         <Tab.Screen
