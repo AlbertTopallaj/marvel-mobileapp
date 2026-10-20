@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import LoginButton from "./LoginButton";
+import { useAuth } from "../context/AuthContext";
 
 export default function LoginForm({ navigation }) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const { login } = useAuth();
 
     const handleLogin = async () => {
         try {
@@ -18,6 +20,7 @@ export default function LoginForm({ navigation }) {
                 body: JSON.stringify({ username, password }),
             });
             const data = await response.json();
+            login(data.username, data.token);
             setUsername("");
             setPassword("");
 
