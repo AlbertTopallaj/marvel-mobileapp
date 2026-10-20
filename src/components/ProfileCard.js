@@ -7,7 +7,7 @@ export default function ProfileCard(){
     const hour = new Date().getHours;
 
 
-    let greeting
+    let greeting = "";
     if(hour < 12){
         greeting = "Good morning!";
     } else if(hour < 18){
