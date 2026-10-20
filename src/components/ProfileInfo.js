@@ -1,4 +1,4 @@
-import { ImageBackground } from "react-native";
+import { ImageBackground, StyleSheet } from "react-native";
 
 export default function ProfileInfo(){
     return <>
@@ -9,3 +9,9 @@ export default function ProfileInfo(){
     </ImageBackground>
     </>
 }
+
+const styles = StyleSheet.create({
+    background: {
+        flex: 1,
+    }
+})
