@@ -18,7 +18,7 @@ export default function ProfileCard(){
 
     return <>
     <View style={styles.card}>
-        <Text style={styles.greeting}>{greeting} {user?.username}</Text>
+        <Text style={styles.greeting}>{greeting}, {user?.username}</Text>
     </View>
     </>
 }
@@ -26,12 +26,16 @@ export default function ProfileCard(){
 const styles = StyleSheet.create({
     card: {
         position: "absolute",
-        bottom: 40,
+        top: 60,
         left: 24,
+        right: 24,
+        backgroundColor: "white",
+        borderRadius: 12,
+        padding: 16,
     },
     greeting: {
-        color: "white",
-        fontSize: 24,
+        color: "black",
+        fontSize: 18,
         fontWeight: "bold",
     },
 
