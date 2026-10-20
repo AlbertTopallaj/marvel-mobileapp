@@ -1,7 +1,6 @@
 import { ImageBackground, StyleSheet } from "react-native";
 import Header from "../components/Header";
 import MovieList from "../components/MovieList";
-import NavigateToRegisterForm from "../components/NavigateToRegisterButton";
 
 export default function Home() {
   return (
