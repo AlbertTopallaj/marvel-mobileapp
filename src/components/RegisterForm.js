@@ -26,7 +26,7 @@ export default function RegisterForm({ navigation }){
         const data = await response.json();
         setUsername("");
         setPassword("");
-        showToast("Registering lyckades")
+        showToast(`Registering lyckades, välkommen ${username}`, "success");
         } catch (error) {
             showToast("Fel på serversida, vänligen försök igen", "error");
         }
