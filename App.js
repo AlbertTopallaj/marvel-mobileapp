@@ -5,7 +5,7 @@
   import Profile from "./src/screens/Profile";
   import { AuthProvider, useAuth} from "./src/context/AuthContext";
   import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
+  import { Ionicons } from "@expo/vector-icons";
 
    const Tab = createBottomTabNavigator();
 
