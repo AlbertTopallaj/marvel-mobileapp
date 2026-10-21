@@ -9,13 +9,9 @@ import { Ionicons } from "@expo/vector-icons";
 
    const Tab = createBottomTabNavigator();
 
-   function AppNavigator(){
-    const { user } = useAuth();
-
-    // TODO: FIXA IKONER TILL TABS
-    // TODO: TA BORT LOGIN OCH REGISTER NÄR MAN ÄR INLOGGAD
-    // TODO: TA BORT UTLOGGNING VID REFRESH
+   function NonAuthNavigator(){
     return <>
+
     <Tab.Navigator>
        <Tab.Screen
         name="Home"
@@ -30,22 +26,7 @@ import { Ionicons } from "@expo/vector-icons";
           )
         }}>
         </Tab.Screen>
-
-        <Tab.Screen
-        name="Register"
-        component={Register}
-        options={{
-          tabBarIcon: () => (
-            <Ionicons
-            name="person-add"
-            size={24}
-            color="black"
-            />
-          )
-        }}>
-        </Tab.Screen>
-
-        <Tab.Screen
+      <Tab.Screen
         name="Login"
         component={Login}
         options={{
@@ -58,8 +39,41 @@ import { Ionicons } from "@expo/vector-icons";
           )
         }}>
         </Tab.Screen>
-        { user && (
-        <Tab.Screen
+       <Tab.Screen
+        name="Register"
+        component={Register}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons
+            name="person-add"
+            size={24}
+            color="black"
+            />
+          )
+        }}>
+        </Tab.Screen>
+    </Tab.Navigator>
+    </>
+   }
+
+   function AppNavigator(){
+
+    return <>
+    <Tab.Navigator>
+     <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: () => (
+            <Ionicons
+            name="home"
+            size={24}
+            color="black"
+            />
+          )
+        }}>
+        </Tab.Screen>
+    <Tab.Screen
         name="Profile"
         component={Profile}
          options={{
@@ -72,17 +86,21 @@ import { Ionicons } from "@expo/vector-icons";
           )
         }}>
         </Tab.Screen>
-        )}
     </Tab.Navigator>
     </>
-   }
+}
+
+function RootNavigator(){
+  const { user } = useAuth();
+  return user ? <AppNavigator/> : <NonAuthNavigator/>
+}
 
   export default function App() {
 
     return <>
     <AuthProvider>
     <NavigationContainer>
-      <AppNavigator></AppNavigator>
+      <RootNavigator></RootNavigator>
     </NavigationContainer>
     </AuthProvider>
     </>
