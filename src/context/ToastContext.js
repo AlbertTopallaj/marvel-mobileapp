@@ -6,4 +6,5 @@ const ToastContext = createContext();
 export function ToastProvider({ children }){
     const [visible, setVisible] = useState(false);
     const [message, setMessage] = useState("");
+    const [type, setType] = useState("");
 }
