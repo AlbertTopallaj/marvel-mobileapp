@@ -10,10 +10,10 @@ export default function RegisterForm({ navigation }){
 
     const handleRegister = async () => {
         if(!username){
-            showToast("Användarnamn saknas. Skriv till ett användarnamn.", error);
+            showToast("Användarnamn saknas. Skriv till ett användarnamn.", "error");
         }
         if(!password){
-            showToast("Lösenord saknas. Skriv till ett lösenord", error);
+            showToast("Lösenord saknas. Skriv till ett lösenord", "error");
         }
         try {
             const response = await fetch("http://10.0.2.2:8080/user/register", {
@@ -26,8 +26,9 @@ export default function RegisterForm({ navigation }){
         const data = await response.json();
         setUsername("");
         setPassword("");
+        showToast("Registering lyckades")
         } catch (error) {
-            showToast("Fel på serversida, vänligen försök igen", error);
+            showToast("Fel på serversida, vänligen försök igen", "error");
         }
     }
 
