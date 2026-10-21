@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 
 const ToastContext = createContext();
@@ -17,5 +17,15 @@ export function ToastProvider({ children }){
             setVisible(false);
         }, 3000);
     }
-    
+    return <>
+    <ToastContext.Provider value={{ showToast }}>
+        {children}
+
+        <Toast message={message} visible={visible} type={type}></Toast>
+    </ToastContext.Provider>
+    </>
 }
+
+    export function useToast(){
+        return useContext(ToastContext);
+    }
