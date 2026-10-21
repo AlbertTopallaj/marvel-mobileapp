@@ -98,11 +98,13 @@ function RootNavigator(){
   export default function App() {
 
     return <>
+    <ToastProvider>
     <AuthProvider>
     <NavigationContainer>
       <RootNavigator></RootNavigator>
     </NavigationContainer>
     </AuthProvider>
+    </ToastProvider>
     </>
   }
 
