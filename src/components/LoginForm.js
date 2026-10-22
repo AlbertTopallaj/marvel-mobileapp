@@ -24,10 +24,9 @@ export default function LoginForm({ navigation }) {
             login(data.id, data.username, data.token);
             setUsername("");
             setPassword("");
-            
+            showToast(`Inloggningen lyckades, Välkommen åter ${username}`, "success");
         } catch (error) {
-            setError("Något gick fel.")
-            console.log(error);
+           showToast("Fel på serversidan, vänligen försök igen", "error");
         }
     };
 
