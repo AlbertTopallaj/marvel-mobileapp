@@ -2,7 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet, Text, View } from "react-native";
 
 
-export default function Toast({ message, type, visible }){
+export function Toast({ message, type, visible }){
     if(!visible){
         return null;
     }
@@ -12,7 +12,7 @@ export default function Toast({ message, type, visible }){
 
     if(type === "success"){
         iconName = "checkmark-circle";
-        iconColor = "4CAF50";
+        iconColor = "#4CAF50";
     } else if (type === "error"){
         iconName = "close-circle";
         iconColor = "#E53935";

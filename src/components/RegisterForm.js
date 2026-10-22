@@ -11,9 +11,11 @@ export default function RegisterForm({ navigation }){
     const handleRegister = async () => {
         if(!username){
             showToast("Användarnamn saknas. Skriv till ett användarnamn.", "error");
+            return;
         }
         if(!password){
             showToast("Lösenord saknas. Skriv till ett lösenord", "error");
+            return;
         }
         try {
             const response = await fetch("http://10.0.2.2:8080/user/register", {
