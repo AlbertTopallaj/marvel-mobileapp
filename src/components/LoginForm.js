@@ -7,7 +7,6 @@ export default function LoginForm({ navigation }) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
     const { login } = useAuth();
 
     const handleLogin = async () => {
@@ -23,7 +22,7 @@ export default function LoginForm({ navigation }) {
             login(data.id, data.username, data.token);
             setUsername("");
             setPassword("");
-
+            
         } catch (error) {
             setError("Något gick fel.")
             console.log(error);
