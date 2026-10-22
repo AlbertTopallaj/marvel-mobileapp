@@ -1,17 +1,19 @@
 import { Alert, Modal, Pressable, StyleSheet, Text, View } from "react-native";
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
+import { useToast } from "../context/ToastContext";
 
 
 export default function DeleteAccountButton(){
     const [visible, setVisible] = useState(false);
     const { user, deleteAccount } = useAuth();
+    const { showToast } = useToast();
 
     const handleDelete = async () => {
         try {
             await deleteAccount(user.id);
             setVisible(false);
-            Alert.alert("Klart", "Ditt konto har blivit raderat");
+            showToast("Kontot är raderat", "success");
         } catch (error) {
             Alert.alert("Fel",  error.message);
         }
