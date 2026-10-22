@@ -26,6 +26,12 @@ export default function RegisterForm({ navigation }){
                 body: JSON.stringify({ username, password }),
         });
         const data = await response.json();
+
+        if(!response.ok){
+            showToast(data.error, "error");
+            return;
+        }
+
         setUsername("");
         setPassword("");
         showToast(`Registering lyckades, välkommen ${username}`, "success");
