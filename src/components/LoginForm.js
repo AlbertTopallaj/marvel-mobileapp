@@ -2,12 +2,14 @@ import { useState } from "react";
 import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import LoginButton from "./LoginButton";
 import { useAuth } from "../context/AuthContext";
+import { useToast } from "../context/ToastContext";
 
 export default function LoginForm({ navigation }) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const { login } = useAuth();
+    const { showToast } = useToast();
 
     const handleLogin = async () => {
         try {
