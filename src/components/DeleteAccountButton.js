@@ -15,7 +15,7 @@ export default function DeleteAccountButton(){
             setVisible(false);
             showToast("Kontot är raderat", "success");
         } catch (error) {
-            Alert.alert("Fel",  error.message);
+            showToast("Kontot kunde inte raderas", "error");
         }
     }
 
