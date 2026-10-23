@@ -19,6 +19,7 @@ export default function LoginForm({ navigation }) {
 
         if(!password){
             showToast("Lösenord saknas", "error");
+            return;
         }
         try {
             const response = await fetch("http://10.0.2.2:8080/user/login", {
