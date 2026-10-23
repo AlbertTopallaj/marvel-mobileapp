@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import * as SecureStore from "expo-secure-store";
 
 
 const AuthContext = createContext();
@@ -7,13 +8,13 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
 
-    const login = (id, username, token) => {
+    const login = async (id, username, token) => {
+        await SecureStore.setItemAsync("auth_token", token)
         setUser({ id, username, token })
     };
 
     const logout = () => {
         setUser(null);
-        
     };
 
     const deleteAccount = async (userId) => {
