@@ -12,6 +12,9 @@ export default function LoginForm({ navigation }) {
     const { showToast } = useToast();
 
     const handleLogin = async () => {
+        if(!username){
+            showToast("Användarnamn saknas", "error");
+        }
         try {
             const response = await fetch("http://10.0.2.2:8080/user/login", {
                 method: "POST",
