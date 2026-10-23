@@ -2,6 +2,7 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import RegisterButton from "./RegisterButton";
 import { useState } from "react";
 import { useToast } from "../context/ToastContext";
+import Loading from "./Loading";
 
 export default function RegisterForm({ navigation }){
     const [username, setUsername] = useState("");
@@ -18,6 +19,7 @@ export default function RegisterForm({ navigation }){
             showToast("Lösenord saknas. Skriv till ett lösenord", "error");
             return;
         }
+        setLoading(true);
         try {
             const response = await fetch("http://10.0.2.2:8080/user/register", {
                 method: "POST",
@@ -38,6 +40,8 @@ export default function RegisterForm({ navigation }){
         showToast(`Registering lyckades, välkommen ${username}`, "success");
         } catch (error) {
             showToast("Fel på serversida, vänligen försök igen", "error");
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -64,6 +68,7 @@ export default function RegisterForm({ navigation }){
     />
 
     <RegisterButton onRegister={handleRegister} navigation={navigation}/>
+    {loading && <Loading/>}
     </View>
     </>
 }
