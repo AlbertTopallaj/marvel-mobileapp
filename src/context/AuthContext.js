@@ -31,7 +31,7 @@ export function AuthProvider({ children }) {
         if(!request.ok) {
             throw new Error("Kunde inte radera kontot");
         }
-
+        await SecureStore.deleteItemAsync("auth_token");
         setUser(null);
     }
 
