@@ -32,6 +32,7 @@ export default function LoginForm({ navigation }) {
 
             if(!response.ok){
                 showToast("Fel användarnamn eller lösenord", "error");
+                return;
             }
 
             const data = await response.json();
@@ -41,6 +42,7 @@ export default function LoginForm({ navigation }) {
             showToast(`Inloggningen lyckades, Välkommen åter ${username}`, "success");
         } catch (error) {
            showToast("Fel på serversidan, vänligen försök igen", "error");
+           return;
         }
     };
 
