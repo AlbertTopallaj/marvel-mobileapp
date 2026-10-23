@@ -3,11 +3,13 @@ import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 import LoginButton from "./LoginButton";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
+import Loading from "./Loading";
 
 export default function LoginForm({ navigation }) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
     const { login } = useAuth();
     const { showToast } = useToast();
 
@@ -21,6 +23,8 @@ export default function LoginForm({ navigation }) {
             showToast("Lösenord saknas", "error");
             return;
         }
+
+        setLoading(true);
         try {
             const response = await fetch("http://10.0.2.2:8080/user/login", {
                 method: "POST",
@@ -35,6 +39,7 @@ export default function LoginForm({ navigation }) {
                 return;
             }
 
+
             const data = await response.json();
             login(data.id, data.username, data.token);
             setUsername("");
@@ -42,7 +47,8 @@ export default function LoginForm({ navigation }) {
             showToast(`Inloggningen lyckades, Välkommen åter ${username}`, "success");
         } catch (error) {
            showToast("Fel på serversidan, vänligen försök igen", "error");
-           return;
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -68,6 +74,7 @@ export default function LoginForm({ navigation }) {
         />
     
         <LoginButton onLogin={handleLogin} navigation={navigation}/>
+        {loading && <Loading/>}
     </View>
     </>
 }
