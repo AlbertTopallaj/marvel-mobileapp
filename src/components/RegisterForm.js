@@ -6,6 +6,7 @@ import { useToast } from "../context/ToastContext";
 export default function RegisterForm({ navigation }){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
     const { showToast } = useToast();
 
     const handleRegister = async () => {
