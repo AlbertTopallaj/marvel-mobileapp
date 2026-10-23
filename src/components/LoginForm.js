@@ -14,6 +14,11 @@ export default function LoginForm({ navigation }) {
     const handleLogin = async () => {
         if(!username){
             showToast("Användarnamn saknas", "error");
+            return;
+        }
+
+        if(!password){
+            showToast("Lösenord saknas", "error");
         }
         try {
             const response = await fetch("http://10.0.2.2:8080/user/login", {
