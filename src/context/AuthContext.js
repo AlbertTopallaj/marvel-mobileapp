@@ -9,11 +9,12 @@ export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
 
     const login = async (id, username, token) => {
-        await SecureStore.setItemAsync("auth_token", token)
-        setUser({ id, username, token })
+        await SecureStore.setItemAsync("auth_token", token);
+        setUser({ id, username, token });
     };
 
-    const logout = () => {
+    const logout = async () => {
+        await SecureStore.deleteItemAsync("auth_token", token);
         setUser(null);
     };
 
