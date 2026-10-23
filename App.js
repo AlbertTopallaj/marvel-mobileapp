@@ -94,7 +94,9 @@
 function RootNavigator(){
   const { user, loading } = useAuth();
 
-  if(loading) return null;
+  if(loading) {
+    
+  }
 
   return user ? <AppNavigator/> : <NonAuthNavigator/>
 }
