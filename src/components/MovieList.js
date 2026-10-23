@@ -5,9 +5,6 @@ import { useEffect, useState } from "react";
 export default function MovieList(){
     const [movies, setMovies] = useState([]);
 
-
-
-    
     useEffect(() => {
         fetch("http://10.0.2.2:8080/movie/find")
         .then(res => {
