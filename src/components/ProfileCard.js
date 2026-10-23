@@ -9,11 +9,11 @@ export default function ProfileCard(){
 
     let greeting = "";
     if(hour < 12){
-        greeting = "Good morning!";
+        greeting = "God morgon!";
     } else if(hour < 18){
-        greeting = "Good day";
+        greeting = "God dag";
     } else {
-        greeting = "Good evening";
+        greeting = "Good kväll";
     }
 
     return <>
