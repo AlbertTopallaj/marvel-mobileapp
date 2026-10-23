@@ -28,7 +28,7 @@ export default function RegisterForm({ navigation }){
         const data = await response.json();
 
         if(!response.ok){
-            showToast(data.error, "error");
+            showToast("Användarnamnet är redan upptaget", "error");
             return;
         }
 
