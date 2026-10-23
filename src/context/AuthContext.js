@@ -14,7 +14,7 @@ export function AuthProvider({ children }) {
     };
 
     const logout = async () => {
-        await SecureStore.deleteItemAsync("auth_token", token);
+        await SecureStore.deleteItemAsync("auth_token");
         setUser(null);
     };
 
