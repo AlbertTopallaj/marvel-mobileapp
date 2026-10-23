@@ -7,6 +7,7 @@
   import { ToastProvider } from "./src/context/ToastContext";
   import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
   import { Ionicons } from "@expo/vector-icons";
+  import Loading from "./src/components/Loading";
 
    const Tab = createBottomTabNavigator();
 
@@ -95,7 +96,9 @@ function RootNavigator(){
   const { user, loading } = useAuth();
 
   if(loading) {
-    
+    return <>
+    <Loading/>
+    </>
   }
 
   return user ? <AppNavigator/> : <NonAuthNavigator/>
