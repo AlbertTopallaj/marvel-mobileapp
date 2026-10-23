@@ -20,6 +20,11 @@ export default function LoginForm({ navigation }) {
                 },
                 body: JSON.stringify({ username, password }),
             });
+
+            if(!response.ok){
+                showToast("Fel användarnamn eller lösenord", "error");
+            }
+
             const data = await response.json();
             login(data.id, data.username, data.token);
             setUsername("");
