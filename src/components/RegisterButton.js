@@ -18,7 +18,9 @@ export default function RegisterButton({ navigation, onRegister }){
     </Pressable>
     <Pressable
     style={styles.registerButton}
-    onPress={onRegister}>
+    onPress={() => {
+         onRegister();
+    }}>
         <Text style={styles.registerText}>Registera</Text>
     </Pressable>
     </>

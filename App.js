@@ -4,8 +4,9 @@
   import Login from "./src/screens/Login";
   import Profile from "./src/screens/Profile";
   import { AuthProvider, useAuth} from "./src/context/AuthContext";
+  import { ToastProvider } from "./src/context/ToastContext";
   import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
+  import { Ionicons } from "@expo/vector-icons";
 
    const Tab = createBottomTabNavigator();
 
@@ -98,11 +99,13 @@ function RootNavigator(){
   export default function App() {
 
     return <>
+    <ToastProvider>
     <AuthProvider>
     <NavigationContainer>
       <RootNavigator></RootNavigator>
     </NavigationContainer>
     </AuthProvider>
+    </ToastProvider>
     </>
   }
 

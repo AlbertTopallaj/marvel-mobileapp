@@ -1,4 +1,3 @@
-import RegisterButton from "../components/RegisterButton";
 import RegisterForm from "../components/RegisterForm";
 import { ImageBackground, StyleSheet } from "react-native";
 

@@ -1,12 +1,22 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import RegisterButton from "./RegisterButton";
 import { useState } from "react";
+import { useToast } from "../context/ToastContext";
 
 export default function RegisterForm({ navigation }){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const { showToast } = useToast();
 
     const handleRegister = async () => {
+        if(!username){
+            showToast("Användarnamn saknas. Skriv till ett användarnamn.", "error");
+            return;
+        }
+        if(!password){
+            showToast("Lösenord saknas. Skriv till ett lösenord", "error");
+            return;
+        }
         try {
             const response = await fetch("http://10.0.2.2:8080/user/register", {
                 method: "POST",
@@ -16,11 +26,17 @@ export default function RegisterForm({ navigation }){
                 body: JSON.stringify({ username, password }),
         });
         const data = await response.json();
+
+        if(!response.ok){
+            showToast("Användarnamnet är redan upptaget", "error");
+            return;
+        }
+
         setUsername("");
         setPassword("");
+        showToast(`Registering lyckades, välkommen ${username}`, "success");
         } catch (error) {
-            // TILLFÄLLIG FELHANTERING, EJ FÄRDIGSTÄLLD
-            console.log(error);
+            showToast("Fel på serversida, vänligen försök igen", "error");
         }
     }
 
