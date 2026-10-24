@@ -17,7 +17,7 @@ import Detail from "./src/screens/Detail";
    function HomeStack(){
     return <>
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}></Stack.Screen>
+      <Stack.Screen name="MovieList" component={Home} options={{ headerShown: false }}></Stack.Screen>
       <Stack.Screen name="MovieDetail" component={Detail} options={{ title: 'Film'}}></Stack.Screen>
     </Stack.Navigator>
     </>
@@ -76,7 +76,7 @@ import Detail from "./src/screens/Detail";
     <Tab.Navigator>
      <Tab.Screen
         name="Home"
-        component={Home}
+        component={HomeStack}
         options={{
           tabBarIcon: () => (
             <Ionicons
