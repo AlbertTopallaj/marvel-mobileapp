@@ -17,13 +17,13 @@ export default function Detail({ route }){
     }, []);
 
     return <>
-    <ScrollView contentContainerStyle={styles.container}>
+    <View contentContainerStyle={styles.container}>
         <Text style={styles.title}>{movie.title}</Text>
         <Text styles={styles.info}>{movie.year}</Text>
         <Text styles={styles.description}>{movie.description}</Text>
 
         <CreateReviewButton movieId={movieId} onReviewCreated={fetchReviews}/>
-    </ScrollView>
+    </View>
     </>
 }
 
