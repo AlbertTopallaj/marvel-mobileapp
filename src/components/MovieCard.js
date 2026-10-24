@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 
 export default function MovieCard({ movie, navigation }) {
     return <>
+    <Pressable>
     <View style={styles.card}>
         <Text style={styles.title}>{movie.title}</Text>
     </View>
+    </Pressable>    
     </>
 }
 
