@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 
-export default function MovieCard({ movie }) {
+export default function MovieCard({ movie, navigation }) {
     return <>
     <View style={styles.card}>
         <Text style={styles.title}>{movie.title}</Text>
