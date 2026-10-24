@@ -7,7 +7,7 @@ export default function Detail({ route }){
     const [reviews, setReviews] = useState([]);
 
     const fetchReviews = () => {
-    fetch(`http://10.0.2.2:8080/review/${movieId}/reviews`)
+    fetch(`http://10.0.2.2:8080/review/${movie.id}/reviews`)
     .then(res => res.json())
     .then(data => setReviews(data));
     };
@@ -26,7 +26,6 @@ export default function Detail({ route }){
     </View>
     </>
 }
-
 const styles = StyleSheet.create({
     container: {
         padding: 24
