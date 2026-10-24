@@ -1,10 +1,15 @@
-import { View, Text, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 
 export default function MovieCard({ movie }) {
+    const navigation = useNavigation();
+
     return <>
+    <Pressable onPress={() => navigation.navigate('MovieDetail', { movie })}>
     <View style={styles.card}>
         <Text style={styles.title}>{movie.title}</Text>
     </View>
+    </Pressable>    
     </>
 }
 

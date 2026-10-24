@@ -1,9 +1,11 @@
 import { FlatList, StyleSheet } from "react-native";
 import MovieCard from "./MovieCard";
 import { useEffect, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 export default function MovieList(){
     const [movies, setMovies] = useState([]);
+    const navigation = useNavigation();
 
     useEffect(() => {
         fetch("http://10.0.2.2:8080/movie/find")
@@ -22,7 +24,7 @@ export default function MovieList(){
     horizontal={true}
     contentContainerStyle={styles.list}
     keyExtractor={(item) => item.id}
-    renderItem={({ item }) => <MovieCard movie={item}/>}>
+    renderItem={({ item }) => <MovieCard movie={item} navigation={navigation}/>}>
     </FlatList>
     </>
 }

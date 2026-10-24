@@ -8,8 +8,20 @@
   import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
   import { Ionicons } from "@expo/vector-icons";
   import Loading from "./src/components/Loading";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Detail from "./src/screens/Detail";
 
    const Tab = createBottomTabNavigator();
+   const Stack = createNativeStackNavigator();
+
+   function HomeStack(){
+    return <>
+    <Stack.Navigator>
+      <Stack.Screen name="MovieList" component={Home} options={{ headerShown: false }}></Stack.Screen>
+      <Stack.Screen name="MovieDetail" component={Detail} options={{ title: 'Film'}}></Stack.Screen>
+    </Stack.Navigator>
+    </>
+   }
 
    function NonAuthNavigator(){
     return <>
@@ -17,7 +29,7 @@
     <Tab.Navigator>
        <Tab.Screen
         name="Home"
-        component={Home}
+        component={HomeStack}
         options={{
           tabBarIcon: () => (
             <Ionicons
@@ -64,7 +76,7 @@
     <Tab.Navigator>
      <Tab.Screen
         name="Home"
-        component={Home}
+        component={HomeStack}
         options={{
           tabBarIcon: () => (
             <Ionicons
