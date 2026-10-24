@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 
 export default function MovieCard({ movie, navigation }) {
     return <>
-    <Pressable>
+    <Pressable onPress={() => navigation.navigate('MovieDetail', { movie })}>
     <View style={styles.card}>
         <Text style={styles.title}>{movie.title}</Text>
     </View>
