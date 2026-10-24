@@ -2,7 +2,7 @@ import { ImageBackground, StyleSheet } from "react-native";
 import Header from "../components/Header";
 import MovieList from "../components/MovieList";
 
-export default function Home() {
+export default function Home({ navigation }) {
   return (
     <>
       <Header />
@@ -10,7 +10,7 @@ export default function Home() {
         style={styles.background}
         source={require("../pictures/avengers.jpg")}
       >
-        <MovieList />
+        <MovieList navigation={navigation} />
       </ImageBackground>
     </>
   );
