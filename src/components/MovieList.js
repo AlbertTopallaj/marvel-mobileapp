@@ -2,7 +2,7 @@ import { FlatList, StyleSheet } from "react-native";
 import MovieCard from "./MovieCard";
 import { useEffect, useState } from "react";
 
-export default function MovieList(){
+export default function MovieList({ navigation }){
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
