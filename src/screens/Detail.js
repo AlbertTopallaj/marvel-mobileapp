@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text } from "react-native";
+import CreateReviewButton from "../components/CreateReviewButton";
 
 export default function Detail({ route }){
     const { movie } = route.params;
@@ -20,6 +21,8 @@ export default function Detail({ route }){
         <Text style={styles.title}>{movie.title}</Text>
         <Text styles={styles.info}>{movie.year}</Text>
         <Text styles={styles.description}>{movie.description}</Text>
+
+        <CreateReviewButton movieId={movieId} onReviewCreated={fetchReviews}/>
     </ScrollView>
     </>
 }
