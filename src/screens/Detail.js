@@ -23,6 +23,8 @@ export default function Detail({ route }){
         <Text styles={styles.description}>{movie.description}</Text>
 
         <CreateReviewButton movieId={movieId} onReviewCreated={fetchReviews}/>
+
+        <Text style={styles.reviewTitle}></Text>
     </View>
     </>
 }
