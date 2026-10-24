@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { ScrollView, StyleSheet, Text } from "react-native";
 
 export default function Detail({ route }){
     const { movie } = route.params;
+    const [reviews, setReviews] = useState([]);
 
     return <>
     <ScrollView contentContainerStyle={styles.container}>
