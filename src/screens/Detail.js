@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text } from "react-native";
 
 export default function Detail({ route }){
     const { movie } = route.params;
     const [reviews, setReviews] = useState([]);
+
+    const fetchReviews = () => {
+    fetch(`http://10.0.2.2:8080/review/${movieId}/reviews`)
+    .then(res => res.json())
+    .then(data => setReviews(data));
+    };
+
+    useEffect(() => {
+        fetchReviews();
+    }, []);
 
     return <>
     <ScrollView contentContainerStyle={styles.container}>
