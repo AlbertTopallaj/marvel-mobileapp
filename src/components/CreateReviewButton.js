@@ -18,12 +18,12 @@ export default function CreateReviewButton(){
                 <Text>Skriv en recension</Text>
                 <TextInput style={styles.input} value={title} placeholder="Titel" onChangeText={setTitle}></TextInput>
                 <TextInput style={styles.input} value={description} placeholder="Beskrivning" onChangeText={setDescription}></TextInput>
-                <Pressable>
-                    <Text>Skapa recension</Text>
+                <Pressable style={styles.createReviewButton}>
+                    <Text style={styles.createReviewText}>Skapa recension</Text>
                 </Pressable>
 
-                <Pressable onPress={() => setModalVisible(false)}>
-                    <Text>Avbryt</Text>
+                <Pressable style={styles.cancelButton} onPress={() => setModalVisible(false)}>
+                    <Text style={styles.cancelText}>Avbryt</Text>
                 </Pressable>
 
             </View>
