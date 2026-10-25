@@ -10,6 +10,7 @@ export default function ProfileInfo(){
     source={require("../pictures/avengers.jpg")}
     >
         <ProfileCard/>
+        <ProfileInfo/>
         <LogoutButton/>
         <DeleteAccountButton/>
     </ImageBackground>
