@@ -2,6 +2,7 @@ import { ImageBackground, StyleSheet } from "react-native";
 import ProfileCard from "./ProfileCard";
 import LogoutButton from "./LogoutButton";
 import DeleteAccountButton from "./DeleteAccountButton";
+import UserReviews from "./UserReviews";
 
 export default function ProfileInfo(){
     return <>
@@ -10,7 +11,7 @@ export default function ProfileInfo(){
     source={require("../pictures/avengers.jpg")}
     >
         <ProfileCard/>
-        <ProfileInfo/>
+        <UserReviews/>
         <LogoutButton/>
         <DeleteAccountButton/>
     </ImageBackground>
