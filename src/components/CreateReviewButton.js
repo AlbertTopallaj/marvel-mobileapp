@@ -73,5 +73,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 8,
     },
-    
+    createReviewText: {
+        color: 'white',
+        fontWeight: 'bold',
+    },
+    cancelButton: {
+        alignItems: 'center',
+        padding: 8,
+    }
+
 })
