@@ -10,7 +10,7 @@ export default function MovieList(){
     const navigation = useNavigation();
     const [search, setSearch] = useState(""); 
     const [year, setYear] = useState("");
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const { showToast } = useToast();
     
     const filtered = movies.filter(movie =>
@@ -20,6 +20,7 @@ export default function MovieList(){
 
     useEffect(() => {
         setLoading(true);
+        setTimeout(() => {
         fetch("http://10.0.2.2:8080/movie/find")
         .then(res => {
             return res.json()
@@ -32,6 +33,7 @@ export default function MovieList(){
             showToast("Något gick fel", "error");
             setLoading(false);
         });
+        }, 1500);
     }, []);
 
     return <>
