@@ -16,8 +16,8 @@ export default function CreateReviewButton(){
         <View style={styles.modalOverlay}>
             <View style={styles.modal}>
                 <Text>Skriv en recension</Text>
-                <TextInput value={title} placeholder="Titel" onChangeText={setTitle}></TextInput>
-                <TextInput value={description} placeholder="Beskrivning" onChangeText={setDescription}></TextInput>
+                <TextInput style={styles.input} value={title} placeholder="Titel" onChangeText={setTitle}></TextInput>
+                <TextInput style={styles.input} value={description} placeholder="Beskrivning" onChangeText={setDescription}></TextInput>
                 <Pressable>
                     <Text>Skapa recension</Text>
                 </Pressable>
@@ -35,10 +35,34 @@ export default function CreateReviewButton(){
 
 const styles = StyleSheet.create({
     button: {
-
+        backgroundColor: '#e50914',
+        padding: 12,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginVertical: 16,
     },
 
     buttonText: {
-
-    }
+        color: 'black',
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
+    modalOverlay: {
+        flex: 1,
+        backgroundColor: 'gray',
+        justifyContent: 'center',
+    },
+    modal: {
+        backgroundColor: 'white',
+        padding: 24,
+        margin: 24, 
+        borderRadius: 12,
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 8, 
+        padding: 10, 
+        marginBottom: 12,
+    }, 
 })
