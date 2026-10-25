@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Modal, Pressable, StyleSheet, Text, TextInput, View} from "react-native";
 import { useAuth } from "../context/AuthContext";
+import { useToast } from "../context/ToastContext";
 
 export default function CreateReviewButton({ movieId, onReviewCreated }){
     const { user } = useAuth();
@@ -10,6 +11,10 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
     const { showToast } = useToast();
 
     const handleSubmit = () => {
+        if(!title){
+            showToast("Titel saknas", "error");
+            return;
+        }
         fetch("http://10.0.2.2:8080/review/create", {
             method: "POST",
             headers: { 
