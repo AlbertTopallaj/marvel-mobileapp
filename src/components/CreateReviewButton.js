@@ -39,7 +39,7 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
                 <Text style={styles.modalTitle}>Skriv en recension</Text>
                 <TextInput style={styles.input} value={title} placeholder="Titel" onChangeText={setTitle}></TextInput>
                 <TextInput style={styles.input} value={description} placeholder="Beskrivning" onChangeText={setDescription}></TextInput>
-                <Pressable style={styles.createReviewButton}>
+                <Pressable onPress={handleSubmit} style={styles.createReviewButton}>
                     <Text style={styles.createReviewText}>Skapa recension</Text>
                 </Pressable>
 
