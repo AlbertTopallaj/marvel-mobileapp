@@ -14,10 +14,10 @@ export default function SearchBar({ value, onChangeText}){
 const styles = StyleSheet.create({
     searchbar: {
         borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 8,
+        borderColor: 'black',
         padding: 10,
-        marginBottom: 16, 
+        marginBottom: 16,
+        marginTop: 5, 
         backgroundColor: 'white', 
     }
 })
