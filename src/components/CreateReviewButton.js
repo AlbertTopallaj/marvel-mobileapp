@@ -65,4 +65,13 @@ const styles = StyleSheet.create({
         padding: 10, 
         marginBottom: 12,
     }, 
+
+    createReviewButton: {
+        backgroundColor: 'green',
+        padding: 12,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginBottom: 8,
+    },
+    
 })
