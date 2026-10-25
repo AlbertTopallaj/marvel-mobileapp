@@ -4,6 +4,7 @@ import { Modal, Pressable, StyleSheet, Text, TextInput, View} from "react-native
 export default function CreateReviewButton(){
     const [modalVisible, setModalVisible] = useState(false);
     const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
     
 
     return <>
