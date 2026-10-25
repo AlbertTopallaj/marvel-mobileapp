@@ -27,6 +27,8 @@ export default function EditReviewModal(){
         .catch(() => showToast("Något gick fel", "error"));
         };
     return <>
-
+    <Modal>
+        
+    </Modal>
     </>
 }
