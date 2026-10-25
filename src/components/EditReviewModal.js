@@ -8,7 +8,7 @@ export default function EditReviewModal(){
     const [description, setDescription] = useState(review?.description);
 
     const handleSubmit = () => {
-        fetch(`http://10.0.2.2:8080/review/update/${reviewi.id}`, {
+        fetch(`http://10.0.2.2:8080/review/update/${review.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
