@@ -79,6 +79,11 @@ const styles = StyleSheet.create({
     },
     reviewDescription: {
         fontSize: 14
+    },
+    emptyText: {
+        color: 'gray',
+        textAlign: 'center',
+        marginTop: 16,
     }
     
 })
