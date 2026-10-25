@@ -8,8 +8,25 @@ export default function CreateReviewButton(){
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 
-
-    
+    const handleSubmit = () => {
+        fetch("http://10.0.2.2:8080/review/create", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                title, 
+                description,
+                userId: user.id,
+                movieId
+            }),
+        })
+        .then(res => res.json())
+        .then(() => {
+            setTitle("");
+            setDescription("");
+            setModalVisible(false);
+            onReviewCreated();
+        })
+    }
 
     return <>
     <Pressable style={styles.button} onPress={() => setModalVisible(true)}>
