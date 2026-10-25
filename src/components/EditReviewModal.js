@@ -34,8 +34,8 @@ export default function EditReviewModal({ review, onClose, onReviewUpdated}){
         <View style={styles.overlay}>
             <View style={styles.modal}>
                 <Text style={styles.title}>Redigera recension</Text>
-                <TextInput style={styles.input} value={title} onChangeText={setTitle}></TextInput>
-                <TextInput style={styles.input} value={description} onChangeText={setDescription}></TextInput>
+                <TextInput placeholder="Titel" style={styles.input} value={title} onChangeText={setTitle}></TextInput>
+                <TextInput placeholder="Beskrivning" style={styles.input} value={description} onChangeText={setDescription}></TextInput>
                 <Pressable style={styles.saveButton} onPress={handleSubmit}>
                     <Text style={styles.saveText}>Spara</Text>
                 </Pressable>
