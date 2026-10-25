@@ -78,7 +78,7 @@ export default function Detail({ route }){
                    name="share-social-outline"
                    size={20}
                    color="black"
-                   style={styles.share}>
+                   style={styles.logo}>
                    </Ionicons>
                 </Pressable>
 
@@ -89,7 +89,12 @@ export default function Detail({ route }){
                 </Pressable>
 
                 <Pressable onPress={() => handleEdit(item)}>
-                    <Text>Redigera</Text>
+                    <Ionicons
+                    name="create-outline"
+                    size={20}
+                    style={styles.logo}>
+
+                    </Ionicons>
                 </Pressable>
                 </>
 
@@ -99,9 +104,7 @@ export default function Detail({ route }){
         ListEmptyComponent={
             <Text style={styles.emptyText}>Inga recensioner än - var först med att skriva en!</Text>
         }
-        
         >
-
         </FlatList>
         <EditReviewModal 
         review={editReview}
@@ -151,7 +154,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginTop: 16,
     },
-    share: {
+    logo: {
         marginTop: 5,
     }
     
