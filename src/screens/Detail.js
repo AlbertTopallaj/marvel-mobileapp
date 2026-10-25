@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { FlatList, View, StyleSheet, Text } from "react-native";
 import CreateReviewButton from "../components/CreateReviewButton";
 
 export default function Detail({ route }){
@@ -24,12 +24,24 @@ export default function Detail({ route }){
 
         <CreateReviewButton movieId={movieId} onReviewCreated={fetchReviews}/>
 
-        <Text style={styles.reviewTitle}></Text>
+        <Text style={styles.reviewTitle}>Recensioner</Text>
+        <FlatList
+        data={reviews}
+        keyExtractor={(item) => item.id}
+        renderItem={({item }) => (
+            <View style={styles.reviewCard}>
+                <Text style={styles.reviewTitle}>{item.title}</Text>
+                <Text style={styles.reviewDescription}>{item.description}</Text>
+            </View>
+        )}>
+
+        </FlatList>
     </View>
     </>
 }
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         padding: 24
     },
     title: {
@@ -44,5 +56,17 @@ const styles = StyleSheet.create({
     description: {
         fontSize: 16, 
         lineHeight: 24,
+    },
+    reviewTitle: {
+        fontSize: 20, 
+        fontWeight: 'bold',
+        marginBottom: 12,
+    }, 
+    reviewCard: {
+        backgroundColor: '#f0f0f0',
+        padding: 12,
+        borderRadius: 8, 
+        marginBottom: 12,
+
     }
 })
