@@ -23,13 +23,14 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
             }),
         })
         .then(res => {
-            
+            if(!res.ok) showToast("Något gick fel", "error");
         })
         .then(() => {
             setTitle("");
             setDescription("");
             setModalVisible(false);
             onReviewCreated();
+            showToast("Recensionen är skapad!", "success");
         })
     }
 
