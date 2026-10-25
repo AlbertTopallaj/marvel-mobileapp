@@ -42,7 +42,6 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
             setTitle("");
             setDescription("");
             setModalVisible(false);
-            console.log("här kommer reviewcreated")
             onReviewCreated();
             showToast("Recensionen är skapad!", "success");
         })
