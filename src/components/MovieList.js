@@ -3,12 +3,15 @@ import MovieCard from "./MovieCard";
 import { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import SearchBar from "./SearchBar";
+import { useToast } from "../context/ToastContext";
 
 export default function MovieList(){
     const [movies, setMovies] = useState([]);
     const navigation = useNavigation();
     const [search, setSearch] = useState(""); 
     const [year, setYear] = useState("");
+    const [loading, setLoading] = useState(false);
+    const { showToast } = useToast();
     
     const filtered = movies.filter(movie =>
         movie.title.toLowerCase().includes(search.toLowerCase()) && 
@@ -16,14 +19,16 @@ export default function MovieList(){
     );
 
     useEffect(() => {
+        setLoading(true);
         fetch("http://10.0.2.2:8080/movie/find")
         .then(res => {
             return res.json()
     })
         .then(data => {
             setMovies(data);
+            setLoading(false);
         })
-        .catch(error => console.log(error));
+        .catch(error => showToast("Något gick fel", "error"));
     }, []);
 
     return <>
