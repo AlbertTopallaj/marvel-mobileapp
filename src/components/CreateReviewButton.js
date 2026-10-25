@@ -8,7 +8,7 @@ export default function CreateReviewButton(){
     
 
     return <>
-    <Pressable onPress={() => setModalVisible(true)}>
+    <Pressable style={styles.button} onPress={() => setModalVisible(true)}>
         <Text style={styles.buttonText}>Skapa recension</Text>
     </Pressable>
 
@@ -35,7 +35,7 @@ export default function CreateReviewButton(){
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#e50914',
+        backgroundColor: 'blue',
         padding: 12,
         borderRadius: 8,
         alignItems: 'center',
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     },
 
     buttonText: {
-        color: 'black',
+        color: 'white',
         fontWeight: 'bold',
         fontSize: 16,
     },
