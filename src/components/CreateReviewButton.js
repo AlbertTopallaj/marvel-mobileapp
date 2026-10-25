@@ -5,9 +5,10 @@ export default function CreateReviewButton(){
     const [modalVisible, setModalVisible] = useState(false);
 
     return <>
-    <Pressable style={styles.button}>
+    <Pressable onPress={() => setModalVisible(true)}>
         <Text style={styles.buttonText}>Skapa recension</Text>
     </Pressable>
+    
     </>
 }
 
