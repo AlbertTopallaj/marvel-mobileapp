@@ -11,8 +11,9 @@ export default function EditReviewModal(){
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer${user.token}`
-            }
+                "Authorization": `Bearer ${user.token}`
+            },
+            body: JSON.stringify({ title, description }),
         })
     }
 
