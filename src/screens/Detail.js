@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FlatList, View, StyleSheet, Text, Pressable } from "react-native";
+import { FlatList, View, StyleSheet, Text, Pressable, Share } from "react-native";
 import CreateReviewButton from "../components/CreateReviewButton";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
@@ -11,6 +11,12 @@ export default function Detail({ route }){
     const [reviews, setReviews] = useState([]);
     const { showToast } = useToast();
     const [editReview, setEditReview] = useState(null);
+
+    const handleShare = async (review) => {
+        await Share.share({
+            message: `Recension: ${movie.title}\n\n"${review.title}"\n${review.description}`,
+        });
+    };
 
     const fetchReviews = () => {
     fetch(`http://10.0.2.2:8080/review/${movie.id}/reviews`, {
