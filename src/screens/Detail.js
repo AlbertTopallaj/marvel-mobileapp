@@ -43,6 +43,8 @@ export default function Detail({ route }){
         .catch(() => showToast("Kunde inte radera recensionen", "error"));
     };
 
+    const handleEdit = (review) => setEditReview(review);
+
     useEffect(() => {
         fetchReviews();
     }, []);
@@ -85,7 +87,10 @@ export default function Detail({ route }){
         >
 
         </FlatList>
-        <EditReviewModal review={() => setEditReview(null)} onReviewCreated={fetchReviews}></EditReviewModal>
+        <EditReviewModal 
+        review={editReview}
+        onClose={() => setEditReview(null)} 
+        onReviewCreated={fetchReviews}></EditReviewModal>
     </View>
     </>
 }
