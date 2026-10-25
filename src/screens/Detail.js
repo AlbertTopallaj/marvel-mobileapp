@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FlatList, View, StyleSheet, Text } from "react-native";
+import { FlatList, View, StyleSheet, Text, Pressable } from "react-native";
 import CreateReviewButton from "../components/CreateReviewButton";
 import { useAuth } from "../context/AuthContext";
 
@@ -44,6 +44,19 @@ export default function Detail({ route }){
             <View style={styles.reviewCard}>
                 <Text style={styles.reviewTitle}>{item.title}</Text>
                 <Text style={styles.reviewDescription}>{item.description}</Text>
+
+                {item.author.id == user.id && 
+                <>
+                <Pressable onPress={() => handleDelete(item.id)}>
+                    <Text>Radera</Text>
+                </Pressable>
+
+                <Pressable onPress={() => handleEdit(item)}>
+                    <Text>Redigera</Text>
+                </Pressable>
+                </>
+
+                }
             </View>
         )}
         ListEmptyComponent={
