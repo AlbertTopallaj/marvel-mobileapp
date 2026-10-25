@@ -20,7 +20,7 @@ export default function MovieList(){
 
     useEffect(() => {
         setLoading(true);
-        setTimeout(() => {
+      
         fetch("http://10.0.2.2:8080/movie/find")
         .then(res => {
             return res.json()
@@ -33,7 +33,6 @@ export default function MovieList(){
             showToast("Något gick fel", "error");
             setLoading(false);
         });
-        }, 1500);
     }, []);
 
     return <>
