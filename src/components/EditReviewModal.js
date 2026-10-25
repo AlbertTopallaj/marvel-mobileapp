@@ -3,7 +3,7 @@ import { Modal, Pressable, StyleSheet, Text, TextInput, View } from "react-nativ
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
 
-export default function EditReviewModal(){
+export default function EditReviewModal({ review, onClose, onReviewUpdated}){
     const { user } = useAuth();
     const { showToast } = useToast();
     const [title, setTitle] = useState(review?.title);

@@ -90,7 +90,7 @@ export default function Detail({ route }){
         <EditReviewModal 
         review={editReview}
         onClose={() => setEditReview(null)} 
-        onReviewCreated={fetchReviews}></EditReviewModal>
+        onReviewUpdated={fetchReviews}></EditReviewModal>
     </View>
     </>
 }
