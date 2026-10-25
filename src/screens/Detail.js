@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { FlatList, View, StyleSheet, Text, Pressable } from "react-native";
+import { FlatList, View, StyleSheet, Text, Pressable, Share } from "react-native";
 import CreateReviewButton from "../components/CreateReviewButton";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
 import EditReviewModal from "../components/EditReviewModal";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Detail({ route }){
     const { movie } = route.params;
@@ -11,6 +12,12 @@ export default function Detail({ route }){
     const [reviews, setReviews] = useState([]);
     const { showToast } = useToast();
     const [editReview, setEditReview] = useState(null);
+
+    const handleShare = async (review) => {
+        await Share.share({
+            message: `Recension: ${movie.title}\n\n${review.title}\n${review.description}`,
+        });
+    };
 
     const fetchReviews = () => {
     fetch(`http://10.0.2.2:8080/review/${movie.id}/reviews`, {
@@ -66,14 +73,32 @@ export default function Detail({ route }){
                 <Text style={styles.reviewTitle}>{item.title}</Text>
                 <Text style={styles.reviewDescription}>{item.description}</Text>
 
-                {item.author.id == user.id && 
-                <>
-                <Pressable onPress={() => handleDelete(item.id)}>
-                    <Text>Radera</Text>
+                <Pressable onPress={() => handleShare(item)}>
+                   <Ionicons
+                   name="share-social-outline"
+                   size={20}
+                   color="black"
+                   style={styles.logo}>
+                   </Ionicons>
                 </Pressable>
 
+                {item.author.id == user.id && 
+                <>
+                    <Pressable onPress={() => handleDelete(item.id)}>
+                        <Ionicons
+                        name="close-circle-outline"
+                        size={20}
+                        style={styles.logo}>
+                        </Ionicons>
+                    </Pressable>
+
                 <Pressable onPress={() => handleEdit(item)}>
-                    <Text>Redigera</Text>
+                    <Ionicons
+                    name="create-outline"
+                    size={20}
+                    style={styles.logo}>
+
+                    </Ionicons>
                 </Pressable>
                 </>
 
@@ -83,9 +108,7 @@ export default function Detail({ route }){
         ListEmptyComponent={
             <Text style={styles.emptyText}>Inga recensioner än - var först med att skriva en!</Text>
         }
-        
         >
-
         </FlatList>
         <EditReviewModal 
         review={editReview}
@@ -134,6 +157,9 @@ const styles = StyleSheet.create({
         color: 'gray',
         textAlign: 'center',
         marginTop: 16,
+    },
+    logo: {
+        marginTop: 5,
     }
     
 })
