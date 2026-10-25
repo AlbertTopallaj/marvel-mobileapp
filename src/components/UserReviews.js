@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext"
 import { useToast } from "../context/ToastContext";
-import { FlatList } from "react-native";
+import { FlatList, StyleSheet } from "react-native";
 
 export default function UserReviews(){
     const { user } = useAuth();
@@ -33,3 +33,31 @@ export default function UserReviews(){
     </FlatList>
     </>
 }
+
+const styles = StyleSheet.create({
+    card: {
+        backgroundColor: 'gray',
+        padding: 12,
+        borderRadius: 8, 
+        marginBottom: 12,
+    },
+
+    movieTitle:  {
+        color: 'gray',
+        fontSize: 12, 
+        marginBottom: 4, 
+    }, 
+    title: {
+        fontWeight: 'bold',
+        fontSize: 16,
+        marginBottom: 4,
+    },
+    description: {
+        fontSize: 14,
+    },
+    emptyText: {
+        color: 'white',
+        textAlign: 'center',
+        marginTop: 16,
+    }
+})
