@@ -8,6 +8,14 @@ export default function SearchBar({ value, onChangeText}){
     value={value}
     onChangeText={onChangeText}>
     </TextInput>
+
+    <TextInput
+    style={styles.searchbar}
+    placeholder="Sök film via år..."
+    value={year}
+    onChangeText={onYearChange}
+    keyboardType="numeric">    
+    </TextInput>
     </>
 }
 
