@@ -8,6 +8,7 @@ export default function MovieList(){
     const [movies, setMovies] = useState([]);
     const navigation = useNavigation();
     const [search, setSearch] = useState(""); 
+    const [year, setYear] = useState("");
     
     const filtered = movies.filter(movie =>
         movie.title.toLowerCase().includes(search.toLowerCase())
