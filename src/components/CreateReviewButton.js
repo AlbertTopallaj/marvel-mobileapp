@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Pressable, StyleSheet, Text} from "react-native";
+import { Modal, Pressable, StyleSheet, Text, TextInput, View} from "react-native";
 
 export default function CreateReviewButton(){
     const [modalVisible, setModalVisible] = useState(false);
@@ -10,7 +10,17 @@ export default function CreateReviewButton(){
     </Pressable>
 
     <Modal visible={modalVisible} animationType="slide" transparent>
-        
+        <View style={styles.modalOverlay}>
+            <View style={styles.modal}>
+                <Text>Skriv en recension</Text>
+                <TextInput placeholder="Titel"></TextInput>
+                <TextInput placeholder="Beskrivning"></TextInput>
+                <Pressable>
+                    <Text>Skapa recension</Text>
+                </Pressable>
+
+            </View>
+        </View>
     </Modal>
 
     </>
