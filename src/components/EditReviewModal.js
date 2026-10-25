@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Modal, Pressable, Text, TextInput, View } from "react-native";
+import { Modal, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function EditReviewModal(){
     const { user } = useAuth();
@@ -46,3 +46,45 @@ export default function EditReviewModal(){
     </Modal>
     </>
 }
+
+const styles = StyleSheet.create({
+    overlay: {
+        flex: 1,
+        backgroundColor: 'gray',
+        justifyContent: 'center',
+    }, 
+    modal: {
+        backgroundColor: 'white',
+        padding: 24,
+        margin: 24, 
+        borderRadius: 12
+    }, 
+    title: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginBottom: 16,
+    },
+    input: {
+        borderWidth: 1, 
+        borderColor: '#ccc',
+        borderRadius: 8,
+        padding: 10, 
+        marginBottom: 12
+    },
+    saveButton: {
+        backgroundColor: 'green',
+        padding: 12, 
+        borderRadius: 8, 
+        alignItems: 'center',
+        marginBottom: 8
+    },
+    saveText: {
+        color: 'white',
+        fontWeight: 'bold',
+    },
+    cancelText: {
+        color: 'gray',
+        textAlign: 'center',
+        padding: 8,
+    }
+})
