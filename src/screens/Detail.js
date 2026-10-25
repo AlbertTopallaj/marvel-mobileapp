@@ -20,7 +20,6 @@ export default function Detail({ route }){
     })
 
     .then(data => {
-        console.log(data);
         setReviews(data);
     });
     };
