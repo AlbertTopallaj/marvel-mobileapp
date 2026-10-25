@@ -4,6 +4,7 @@ import CreateReviewButton from "../components/CreateReviewButton";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
 import EditReviewModal from "../components/EditReviewModal";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Detail({ route }){
     const { movie } = route.params;
@@ -73,7 +74,12 @@ export default function Detail({ route }){
                 <Text style={styles.reviewDescription}>{item.description}</Text>
 
                 <Pressable onPress={() => handleShare(item)}>
-                    <Text>Dela</Text>
+                   <Ionicons
+                   name="share-social-outline"
+                   size={20}
+                   color="black"
+                   style={styles.share}>
+                   </Ionicons>
                 </Pressable>
 
                 {item.author.id == user.id && 
@@ -144,6 +150,9 @@ const styles = StyleSheet.create({
         color: 'gray',
         textAlign: 'center',
         marginTop: 16,
+    },
+    share: {
+        marginTop: 5,
     }
     
 })
