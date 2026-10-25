@@ -22,6 +22,10 @@ export default function CreateReviewButton(){
                     <Text>Skapa recension</Text>
                 </Pressable>
 
+                <Pressable onPress={() => setModalVisible(false)}>
+                    <Text>Avbryt</Text>
+                </Pressable>
+
             </View>
         </View>
     </Modal>
