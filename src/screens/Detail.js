@@ -84,9 +84,13 @@ export default function Detail({ route }){
 
                 {item.author.id == user.id && 
                 <>
-                <Pressable onPress={() => handleDelete(item.id)}>
-                    <Text>Radera</Text>
-                </Pressable>
+                    <Pressable onPress={() => handleDelete(item.id)}>
+                        <Ionicons
+                        name="close-circle-outline"
+                        size={20}
+                        style={styles.logo}>
+                        </Ionicons>
+                    </Pressable>
 
                 <Pressable onPress={() => handleEdit(item)}>
                     <Ionicons
