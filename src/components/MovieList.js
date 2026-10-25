@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet } from "react-native";
+import { ActivityIndicator, FlatList, StyleSheet } from "react-native";
 import MovieCard from "./MovieCard";
 import { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -28,11 +28,17 @@ export default function MovieList(){
             setMovies(data);
             setLoading(false);
         })
-        .catch(error => showToast("Något gick fel", "error"));
+        .catch(error => {
+            showToast("Något gick fel", "error");
+            setLoading(false);
+        });
     }, []);
 
     return <>
     <SearchBar value={search} onChangeText={setSearch} year={year} onYearChange={setYear}></SearchBar>
+    {loading ?
+    <ActivityIndicator size="large" color="white"></ActivityIndicator>
+    :
     <FlatList
     data={filtered}
     horizontal={true}
@@ -40,6 +46,7 @@ export default function MovieList(){
     keyExtractor={(item) => item.id}
     renderItem={({ item }) => <MovieCard movie={item} navigation={navigation}/>}>
     </FlatList>
+    }
     </>
 }
 
