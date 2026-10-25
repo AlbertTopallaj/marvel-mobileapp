@@ -7,13 +7,14 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
     const [modalVisible, setModalVisible] = useState(false);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const { showToast } = useToast();
 
     const handleSubmit = () => {
         fetch("http://10.0.2.2:8080/review/create", {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json",
-                "Authorization": `Bearer: {user.token}` },
+                "Authorization": `Bearer ${user.token}` },
             body: JSON.stringify({
                 title, 
                 description,
@@ -22,8 +23,7 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
             }),
         })
         .then(res => {
-            if(!res.ok) throw new Error("Något gick fel");
-            return res.json();
+            
         })
         .then(() => {
             setTitle("");
