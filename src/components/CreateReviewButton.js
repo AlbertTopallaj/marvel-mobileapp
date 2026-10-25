@@ -16,8 +16,8 @@ export default function CreateReviewButton(){
         <View style={styles.modalOverlay}>
             <View style={styles.modal}>
                 <Text>Skriv en recension</Text>
-                <TextInput value={title} placeholder="Titel"></TextInput>
-                <TextInput value={description} placeholder="Beskrivning"></TextInput>
+                <TextInput value={title} placeholder="Titel" onChangeText={setTitle}></TextInput>
+                <TextInput value={description} placeholder="Beskrivning" onChangeText={setDescription}></TextInput>
                 <Pressable>
                     <Text>Skapa recension</Text>
                 </Pressable>
