@@ -36,14 +36,14 @@ export default function UserReviews(){
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: 'gray',
+        backgroundColor: 'white',
         padding: 12,
         borderRadius: 8, 
         marginBottom: 12,
     },
 
     movieTitle:  {
-        color: 'gray',
+        color: 'black',
         fontSize: 12, 
         marginBottom: 4, 
     }, 
