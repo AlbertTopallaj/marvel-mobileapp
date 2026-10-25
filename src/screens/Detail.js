@@ -22,9 +22,9 @@ export default function Detail({ route }){
         <Text styles={styles.info}>{movie.year}</Text>
         <Text styles={styles.description}>{movie.description}</Text>
 
-        <CreateReviewButton movieId={movieId} onReviewCreated={fetchReviews}/>
+        <CreateReviewButton movieId={movie.id} onReviewCreated={fetchReviews}/>
 
-        <Text style={styles.reviewTitle}>Recensioner</Text>
+        <Text style={styles.reviewsTitle}>Recensioner</Text>
         <FlatList
         data={reviews}
         keyExtractor={(item) => item.id}
@@ -33,7 +33,12 @@ export default function Detail({ route }){
                 <Text style={styles.reviewTitle}>{item.title}</Text>
                 <Text style={styles.reviewDescription}>{item.description}</Text>
             </View>
-        )}>
+        )}
+        ListEmptyComponent={
+            <Text style={styles.emptyText}>Inga recensioner än - var först med att skriva en!</Text>
+        }
+        
+        >
 
         </FlatList>
     </View>
@@ -57,7 +62,7 @@ const styles = StyleSheet.create({
         fontSize: 16, 
         lineHeight: 24,
     },
-    reviewTitle: {
+    reviewsTitle: {
         fontSize: 20, 
         fontWeight: 'bold',
         marginBottom: 12,
@@ -67,6 +72,13 @@ const styles = StyleSheet.create({
         padding: 12,
         borderRadius: 8, 
         marginBottom: 12,
-
+    },
+    reviewTitle: {
+        fontWeight: 'bold',
+        marginBottom: 4,
+    },
+    reviewDescription: {
+        fontSize: 14
     }
+    
 })
