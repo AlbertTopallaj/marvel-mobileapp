@@ -15,7 +15,7 @@ export default function CreateReviewButton(){
     <Modal visible={modalVisible} animationType="slide" transparent>
         <View style={styles.modalOverlay}>
             <View style={styles.modal}>
-                <Text>Skriv en recension</Text>
+                <Text style={styles.modalTitle}>Skriv en recension</Text>
                 <TextInput style={styles.input} value={title} placeholder="Titel" onChangeText={setTitle}></TextInput>
                 <TextInput style={styles.input} value={description} placeholder="Beskrivning" onChangeText={setDescription}></TextInput>
                 <Pressable style={styles.createReviewButton}>
@@ -80,6 +80,13 @@ const styles = StyleSheet.create({
     cancelButton: {
         alignItems: 'center',
         padding: 8,
+    },
+    cancelText: {
+        color: 'gray',
+    },
+    modalTitle: {
+        fontSize: 20, 
+        fontWeight: 'bold',
+        marginBottom: 16, 
     }
-
 })
