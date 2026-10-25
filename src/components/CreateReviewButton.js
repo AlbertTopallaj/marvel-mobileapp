@@ -15,6 +15,9 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
             showToast("Titel saknas", "error");
             return;
         }
+        if(!description){
+            showToast("Beskrivning saknas", "error");
+        }
         fetch("http://10.0.2.2:8080/review/create", {
             method: "POST",
             headers: { 
