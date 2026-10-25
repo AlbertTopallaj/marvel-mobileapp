@@ -8,7 +8,10 @@ export default function Detail({ route }){
 
     const fetchReviews = () => {
     fetch(`http://10.0.2.2:8080/review/${movie.id}/reviews`)
-    .then(res => res.json())
+    .then(res => { 
+        if(!res.ok) return [];
+        return res.json();
+    })
     .then(data => setReviews(data));
     };
 
@@ -17,10 +20,10 @@ export default function Detail({ route }){
     }, []);
 
     return <>
-    <View contentContainerStyle={styles.container}>
+    <View style={styles.container}>
         <Text style={styles.title}>{movie.title}</Text>
-        <Text styles={styles.info}>{movie.year}</Text>
-        <Text styles={styles.description}>{movie.description}</Text>
+        <Text style={styles.info}>{movie.year}</Text>
+        <Text style={styles.description}>{movie.description}</Text>
 
         <CreateReviewButton movieId={movie.id} onReviewCreated={fetchReviews}/>
 
