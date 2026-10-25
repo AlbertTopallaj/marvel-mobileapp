@@ -3,12 +3,14 @@ import { FlatList, View, StyleSheet, Text, Pressable } from "react-native";
 import CreateReviewButton from "../components/CreateReviewButton";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
+import EditReviewModal from "../components/EditReviewModal";
 
 export default function Detail({ route }){
     const { movie } = route.params;
     const { user } = useAuth();
     const [reviews, setReviews] = useState([]);
-    const { showToast } = useToast(); 
+    const { showToast } = useToast();
+    const [editReview, setEditReview] = useState(null);
 
     const fetchReviews = () => {
     fetch(`http://10.0.2.2:8080/review/${movie.id}/reviews`, {
@@ -40,6 +42,8 @@ export default function Detail({ route }){
         })
         .catch(() => showToast("Kunde inte radera recensionen", "error"));
     };
+
+    const handleEdit = (review) => setEditReview(review);
 
     useEffect(() => {
         fetchReviews();
@@ -83,6 +87,10 @@ export default function Detail({ route }){
         >
 
         </FlatList>
+        <EditReviewModal 
+        review={editReview}
+        onClose={() => setEditReview(null)} 
+        onReviewUpdated={fetchReviews}></EditReviewModal>
     </View>
     </>
 }
