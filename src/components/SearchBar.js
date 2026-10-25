@@ -22,10 +22,13 @@ export default function SearchBar({ value, onChangeText, year, onYearChange}){
 const styles = StyleSheet.create({
     searchbar: {
         borderWidth: 1,
-        borderColor: 'black',
-        padding: 10,
+        borderColor: '#ccc',
+        borderRadius: 20,
+        padding: 12,
         marginBottom: 16,
-        marginTop: 5, 
+        marginTop: 15,
         backgroundColor: 'white', 
+        paddingHorizontal: 16,
+        fontSize: 15,
     }
 })
