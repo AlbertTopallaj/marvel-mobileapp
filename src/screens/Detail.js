@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { FlatList, View, StyleSheet, Text } from "react-native";
+import { FlatList, View, StyleSheet, Text, Pressable } from "react-native";
 import CreateReviewButton from "../components/CreateReviewButton";
 import { useAuth } from "../context/AuthContext";
+import { useToast } from "../context/ToastContext";
 
 export default function Detail({ route }){
     const { movie } = route.params;
     const { user } = useAuth();
     const [reviews, setReviews] = useState([]);
+    const { showToast } = useToast(); 
 
     const fetchReviews = () => {
     fetch(`http://10.0.2.2:8080/review/${movie.id}/reviews`, {
@@ -22,6 +24,21 @@ export default function Detail({ route }){
     .then(data => {
         setReviews(data);
     });
+    };
+
+    const handleDelete = (reviewId) => {
+        fetch(`http://10.0.2.2:8080/review/delete/${reviewId}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Bearer ${user.token}`
+            }
+        })
+        .then(res => {
+            if(!res.ok) throw new Error("Kunde inte radera");
+            fetchReviews();
+            showToast("Recensionen är raderad", "success");
+        })
+        .catch(() => showToast("Kunde inte radera recensionen", "error"));
     };
 
     useEffect(() => {
@@ -44,6 +61,19 @@ export default function Detail({ route }){
             <View style={styles.reviewCard}>
                 <Text style={styles.reviewTitle}>{item.title}</Text>
                 <Text style={styles.reviewDescription}>{item.description}</Text>
+
+                {item.author.id == user.id && 
+                <>
+                <Pressable onPress={() => handleDelete(item.id)}>
+                    <Text>Radera</Text>
+                </Pressable>
+
+                <Pressable onPress={() => handleEdit(item)}>
+                    <Text>Redigera</Text>
+                </Pressable>
+                </>
+
+                }
             </View>
         )}
         ListEmptyComponent={
