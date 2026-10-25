@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext"
 import { useToast } from "../context/ToastContext";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet, View, Text } from "react-native";
 
 export default function UserReviews(){
     const { user } = useAuth();
