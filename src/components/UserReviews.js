@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext"
 import { useToast } from "../context/ToastContext";
+import { FlatList } from "react-native";
 
 export default function UserReviews(){
     const { user } = useAuth();
@@ -17,6 +18,18 @@ export default function UserReviews(){
     }, []);
 
     return <>
- 
+    <FlatList
+    data={reviews}
+    keyExtractor={(item) => item.id}
+    renderItem={({item}) => (
+        <View style={styles.card}>
+            <Text style={styles.movieTitle}>{item.movie.title}</Text>
+            <Text style={styles.title}>{item.title}</Text>
+            <Text style={styles.description}>{item.description}</Text>
+        </View>
+    )}
+    ListEmptyComponent={<Text style={styles.emptyText}>Inga recensioner gjorda ännu.</Text>}>
+
+    </FlatList>
     </>
 }
