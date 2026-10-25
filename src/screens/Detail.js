@@ -14,7 +14,7 @@ export default function Detail({ route }){
 
     const handleShare = async (review) => {
         await Share.share({
-            message: `Recension: ${movie.title}\n\n"${review.title}"\n${review.description}`,
+            message: `Recension: ${movie.title}\n\n${review.title}\n${review.description}`,
         });
     };
 
@@ -71,6 +71,10 @@ export default function Detail({ route }){
             <View style={styles.reviewCard}>
                 <Text style={styles.reviewTitle}>{item.title}</Text>
                 <Text style={styles.reviewDescription}>{item.description}</Text>
+
+                <Pressable onPress={() => handleShare(item)}>
+                    <Text>Dela</Text>
+                </Pressable>
 
                 {item.author.id == user.id && 
                 <>
