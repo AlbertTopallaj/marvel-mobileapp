@@ -11,7 +11,8 @@ export default function MovieList(){
     const [year, setYear] = useState("");
     
     const filtered = movies.filter(movie =>
-        movie.title.toLowerCase().includes(search.toLowerCase())
+        movie.title.toLowerCase().includes(search.toLowerCase()) && 
+        (year ===  "" || movie.year.toString() === year )
     );
 
     useEffect(() => {
@@ -26,7 +27,7 @@ export default function MovieList(){
     }, []);
 
     return <>
-    <SearchBar value={search} onChangeText={setSearch}></SearchBar>
+    <SearchBar value={search} onChangeText={setSearch} year={year} onYearChange={setYear}></SearchBar>
     <FlatList
     data={filtered}
     horizontal={true}

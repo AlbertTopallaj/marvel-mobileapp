@@ -1,6 +1,6 @@
 import { StyleSheet, TextInput } from "react-native";
 
-export default function SearchBar({ value, onChangeText}){
+export default function SearchBar({ value, onChangeText, year, onYearChange}){
     return <>
     <TextInput
     style={styles.searchbar}
