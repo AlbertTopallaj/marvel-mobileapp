@@ -11,7 +11,9 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
     const handleSubmit = () => {
         fetch("http://10.0.2.2:8080/review/create", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+                "Content-Type": "application/json",
+                "Authorization": `Bearer: {user.token}` },
             body: JSON.stringify({
                 title, 
                 description,
@@ -19,7 +21,10 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
                 movieId
             }),
         })
-        .then(res => res.json())
+        .then(res => {
+            if(!res.ok) throw new Error("Något gick fel");
+            return res.json();
+        })
         .then(() => {
             setTitle("");
             setDescription("");
