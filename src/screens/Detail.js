@@ -1,18 +1,28 @@
 import { useEffect, useState } from "react";
 import { FlatList, View, StyleSheet, Text } from "react-native";
 import CreateReviewButton from "../components/CreateReviewButton";
+import { useAuth } from "../context/AuthContext";
 
 export default function Detail({ route }){
     const { movie } = route.params;
+    const { user } = useAuth();
     const [reviews, setReviews] = useState([]);
 
     const fetchReviews = () => {
-    fetch(`http://10.0.2.2:8080/review/${movie.id}/reviews`)
+    fetch(`http://10.0.2.2:8080/review/${movie.id}/reviews`, {
+        headers: {
+            "Authorization": `Bearer ${user.token}`
+        }
+    })
     .then(res => { 
         if(!res.ok) return [];
         return res.json();
     })
-    .then(data => setReviews(data));
+
+    .then(data => {
+        console.log(data);
+        setReviews(data);
+    });
     };
 
     useEffect(() => {

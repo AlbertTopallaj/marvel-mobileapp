@@ -12,12 +12,16 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
 
     const handleSubmit = () => {
         if(!title){
-            showToast("Titel saknas", "error");
+            setModalVisible(false);
+            setTimeout(() =>  showToast("Titel saknas", "error"), 500);
             return;
         }
         if(!description){
-            showToast("Beskrivning saknas", "error");
+            setModalVisible(false);
+            setTimeout(() => showToast("Beskrivning saknas", "error"), 500);
+            return;
         }
+
         fetch("http://10.0.2.2:8080/review/create", {
             method: "POST",
             headers: { 
@@ -31,14 +35,19 @@ export default function CreateReviewButton({ movieId, onReviewCreated }){
             }),
         })
         .then(res => {
-            if(!res.ok) showToast("Något gick fel", "error");
+            if(!res.ok) throw new Error("Något gick fel");
+            return res.json();
         })
         .then(() => {
             setTitle("");
             setDescription("");
             setModalVisible(false);
+            console.log("här kommer reviewcreated")
             onReviewCreated();
             showToast("Recensionen är skapad!", "success");
+        })
+        .catch(() => {
+            showToast("Något gick fel", "error");
         })
     }
 
