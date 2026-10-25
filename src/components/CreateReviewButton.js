@@ -8,7 +8,11 @@ export default function CreateReviewButton(){
     <Pressable onPress={() => setModalVisible(true)}>
         <Text style={styles.buttonText}>Skapa recension</Text>
     </Pressable>
-    
+
+    <Modal visible={modalVisible} animationType="slide" transparent>
+        
+    </Modal>
+
     </>
 }
 
