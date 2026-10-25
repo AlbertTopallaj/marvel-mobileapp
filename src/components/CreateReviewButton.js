@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { Modal, Pressable, StyleSheet, Text, TextInput, View} from "react-native";
+import { useAuth } from "../context/AuthContext";
 
 export default function CreateReviewButton(){
+    const { user } = useAuth();
     const [modalVisible, setModalVisible] = useState(false);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+
+
     
 
     return <>
