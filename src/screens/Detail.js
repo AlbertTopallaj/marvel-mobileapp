@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FlatList, View, StyleSheet, Text, Pressable, Share } from "react-native";
+import { FlatList, View, StyleSheet, Text, Pressable, Share, ActivityIndicator } from "react-native";
 import CreateReviewButton from "../components/CreateReviewButton";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
@@ -12,6 +12,7 @@ export default function Detail({ route }){
     const [reviews, setReviews] = useState([]);
     const { showToast } = useToast();
     const [editReview, setEditReview] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleShare = async (review) => {
         await Share.share({
@@ -20,6 +21,7 @@ export default function Detail({ route }){
     };
 
     const fetchReviews = () => {
+        setLoading(true);
     fetch(`http://10.0.2.2:8080/review/${movie.id}/reviews`, {
         headers: {
             "Authorization": `Bearer ${user.token}`
@@ -32,6 +34,7 @@ export default function Detail({ route }){
 
     .then(data => {
         setReviews(data);
+        setLoading(false);
     });
     };
 
@@ -65,6 +68,7 @@ export default function Detail({ route }){
         <CreateReviewButton movieId={movie.id} onReviewCreated={fetchReviews}/>
 
         <Text style={styles.reviewsTitle}>Recensioner</Text>
+        {loading && <ActivityIndicator size="large" color="gray"></ActivityIndicator>}
         <FlatList
         data={reviews}
         keyExtractor={(item) => item.id}

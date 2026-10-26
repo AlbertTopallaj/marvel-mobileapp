@@ -13,7 +13,7 @@ export default function ProfileCard(){
     } else if(hour < 18){
         greeting = "God dag";
     } else {
-        greeting = "Good kväll";
+        greeting = "God kväll";
     }
 
     return <>
