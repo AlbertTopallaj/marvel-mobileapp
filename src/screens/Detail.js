@@ -12,6 +12,7 @@ export default function Detail({ route }){
     const [reviews, setReviews] = useState([]);
     const { showToast } = useToast();
     const [editReview, setEditReview] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleShare = async (review) => {
         await Share.share({
@@ -20,6 +21,7 @@ export default function Detail({ route }){
     };
 
     const fetchReviews = () => {
+        setLoading(true);
     fetch(`http://10.0.2.2:8080/review/${movie.id}/reviews`, {
         headers: {
             "Authorization": `Bearer ${user.token}`
@@ -32,6 +34,7 @@ export default function Detail({ route }){
 
     .then(data => {
         setReviews(data);
+        setLoading(false);
     });
     };
 
