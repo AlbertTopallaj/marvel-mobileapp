@@ -7,13 +7,18 @@ export default function UserReviews(){
     const { user } = useAuth();
     const [reviews, setReviews] = useState([]);
     const { showToast } = useToast();
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         fetch(`http://10.0.2.2:8080/review/get/${user.id}`, {
             headers: { "Authorization": `Bearer ${user.token}` }
         })
         .then(res => res.json())
-        .then(data => setReviews(data))
+        .then(data =>  { 
+            setReviews(data); 
+            setLoading(false) 
+        })
         .catch(error => showToast("Något gick fel", "error"));
     }, []);
 
