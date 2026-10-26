@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FlatList, View, StyleSheet, Text, Pressable, Share } from "react-native";
+import { FlatList, View, StyleSheet, Text, Pressable, Share, ActivityIndicator } from "react-native";
 import CreateReviewButton from "../components/CreateReviewButton";
 import { useAuth } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
@@ -68,6 +68,7 @@ export default function Detail({ route }){
         <CreateReviewButton movieId={movie.id} onReviewCreated={fetchReviews}/>
 
         <Text style={styles.reviewsTitle}>Recensioner</Text>
+        {loading && <ActivityIndicator size="large" color="gray"></ActivityIndicator>}
         <FlatList
         data={reviews}
         keyExtractor={(item) => item.id}
