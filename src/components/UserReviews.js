@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext"
 import { useToast } from "../context/ToastContext";
-import { FlatList, StyleSheet, View, Text } from "react-native";
+import { FlatList, StyleSheet, View, Text, ActivityIndicator } from "react-native";
 
 export default function UserReviews(){
     const { user } = useAuth();
@@ -23,6 +23,9 @@ export default function UserReviews(){
     }, []);
 
     return <>
+    {loading ? 
+    <ActivityIndicator size="large" color="white"></ActivityIndicator>
+    :
     <FlatList
     data={reviews}
     keyExtractor={(item) => item.id}
@@ -36,6 +39,7 @@ export default function UserReviews(){
     ListEmptyComponent={<Text style={styles.emptyText}>Inga recensioner gjorda ännu.</Text>}>
 
     </FlatList>
+   }
     </>
 }
 
