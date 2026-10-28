@@ -39,15 +39,15 @@ New users must register first, then they can log in to experience and access the
 
 ## What local-storage does the marvel-mobileapp use?
 
-### There is only one type of local-storage that the app uses and that is Secure-Store for credentials. There is no need for actually Async-storage since the app doesnt involve any feature requiring that. Secure-Store is better used for credentials then Async-storage since it involves more hidden storage. 
+There is only one type of local-storage that the app uses and that is **Expo Secure-Store** for **credentials**. There is no need for actually Async-storage since the app doesnt involve any feature requiring that. Secure-Store is better used for credentials then Async-storage since it involves more hidden storage. 
 
 ## What mobile feature does the marvel-mobileapp use?
 
-### The app uses the Share feature which is used for sharing reviews. 
+ The app uses the **Share-API** feature which is used for sharing reviews which makes the user to directly share reviews embedded with their mobile machine. 
 
 ## How to install the marvel-mobileapp
 
-### Step 1, you will need a empty folder 
+1. Create an empty folder on your machine. 
 ### Step 2, you will then need to clone this git-repo using `git clone https://github.com/AlbertTopallaj/marvel-mobileapp` in the terminal where your folder is.
 ### Then you have successfully installed the app on your machine
 
