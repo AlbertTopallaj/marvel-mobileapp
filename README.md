@@ -48,8 +48,11 @@ There is only one type of local-storage that the app uses and that is **Expo Sec
 ## How to install the marvel-mobileapp
 
 1. Create an empty folder on your machine. 
-### Step 2, you will then need to clone this git-repo using `git clone https://github.com/AlbertTopallaj/marvel-mobileapp` in the terminal where your folder is.
-### Then you have successfully installed the app on your machine
+2. Open a terminal in that folder and clone the marvel-mobileapp repository:
+
+```bash
+git clone https://github.com/AlbertTopallaj/marvel-api
+```
 
 ## How to start the marvel-mobileapp
 
