@@ -31,3 +31,9 @@
 ## What mobile feature does the marvel-mobileapp use?
 
 ### The app uses the Share feature which is used for sharing reviews. 
+
+## How to install the marvel-mobileapp
+
+### First you will need a empty folder 
+### Secondly you will then need to clone this git-repo using `git clone https://github.com/AlbertTopallaj/marvel-mobileapp` in the terminal where your folder is.
+### Then you have successfully installed the app on your machine
