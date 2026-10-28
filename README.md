@@ -52,3 +52,6 @@
 ## Known problems or limitations
 
 ### The loading symbol might not be visible at everytime.
+
+# NOTE: THE MARVELMOBILEAPP WILL NOT WORK IF THE MARVEL-API IS NOT RUNNING ON YOUR MACHINE.
+# YOU WILL NEED TO `git clone https://github.com/AlbertTopallaj/marvel-api`
