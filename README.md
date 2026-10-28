@@ -51,23 +51,25 @@ There is only one type of local-storage that the app uses and that is **Expo Sec
 2. Open a terminal in that folder and clone the marvel-mobileapp repository:
 
 ```bash
-git clone https://github.com/AlbertTopallaj/marvel-api
+https://github.com/AlbertTopallaj/marvel-mobileapp
 ```
 
 ## How to start the marvel-mobileapp
 
-### Step 1, make sure you have a emulator on your machine. Preferably Android studio.
-### Step 2, choose any device in Android Studio
-### Step 3, start the device in Android Studio
-### Step 4, go back to where you have the marvel-mobileapp on your machine.
-### Step 5, go to your terminal and enter `npx expo start`
-### Step 6, wait until the terminal has done thinking.
-### Step 7, in the terminal, press a
-### Then you will have the marvel-mobileapp start in the emulator on your machine
+1. Make sure you have a emulator on your machine. Preferably **Android Studio**
+2. Choose *any* device in the **Device Manager**
+3. Start the device in Android Studio
+4. Go back to where you have the marvel-mobileapp on your machine.
+5. Open a terminal in the same folder where marvel-mobileapp is. 
+6. When in the terminal, run the following command in the terminal:
+```bash
+npx expo start
+```
+7. In the terminal, press **`a`**
 
 ## Known problems or limitations
 
-### The loading symbol might not be visible at everytime.
+- The loading symbol might not be visible at everytime.
+- Requires the marvel-api to be running locally on your own machine since there is nothing hosted. 
 
-# NOTE: THE MARVELMOBILEAPP WILL NOT WORK IF THE MARVEL-API IS NOT RUNNING ON YOUR MACHINE.
-# YOU WILL NEED TO `git clone https://github.com/AlbertTopallaj/marvel-api`
+- Thank you for trying out the **marvel-mobileapp**
