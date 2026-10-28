@@ -8,7 +8,11 @@ A React Native mobile app for reviewing your favorite Marvel Cinematic Univerise
 
 ## REST API
 
-This app is using a REST-API made by myself which is named marvel-api. The API contains three movies and also handles the whole register and login features and reviews. 
+This app is using a REST-API made by myself which is named **marvel-api**. The API contains three movies and also handles the whole register and login features and reviews. 
+
+Repository: [https://github.com/AlbertTopallaj/marvel-api]
+
+
 
 ## Features
 
