@@ -12,19 +12,19 @@ This app is using a REST-API made by myself which is named **marvel-api**. The A
 
 Repository: [https://github.com/AlbertTopallaj/marvel-api]
 
-> **Note:** If you want to experience the whole experience, you must have the marvel-api running on your machine.
+> **Note:** If you want to experience the whole experience, you must have the marvel-api running on your
 
 ## Features
 
-### Register a user
-### Login
-### Make a review
-### Delete a review
-### Share a review
-### View movies
-### Logout
-### Delete user account
-### View the users reviews in Profile
+- Register a user
+- Login
+- Make a review
+- Delete a review
+- Share a review
+- View movies
+- Logout
+- Delete user account
+- View the users reviews in Profile
 
 ## How does register and login work?
 
