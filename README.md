@@ -48,3 +48,7 @@
 ### Step 6, wait until the terminal has done thinking.
 ### Step 7, in the terminal, press a
 ### Then you will have the marvel-mobileapp start in the emulator on your machine
+
+## Known problems or limitations
+
+### The loading symbol might not be visible at everytime.
