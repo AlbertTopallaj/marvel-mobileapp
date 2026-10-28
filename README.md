@@ -27,3 +27,7 @@
 ## What local-storage does the marvel-mobileapp use?
 
 ### There is only one type of local-storage that the app uses and that is Secure-Store for credentials. There is no need for actually Async-storage since the app doesnt involve any feature requiring that. Secure-Store is better used for credentials then Async-storage since it involves more hidden storage. 
+
+## What mobile feature does the marvel-mobileapp use?
+
+### The app uses the Share feature which is used for sharing reviews. 
