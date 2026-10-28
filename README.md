@@ -34,6 +34,17 @@
 
 ## How to install the marvel-mobileapp
 
-### First you will need a empty folder 
-### Secondly you will then need to clone this git-repo using `git clone https://github.com/AlbertTopallaj/marvel-mobileapp` in the terminal where your folder is.
+### Step 1, you will need a empty folder 
+### Step 2, you will then need to clone this git-repo using `git clone https://github.com/AlbertTopallaj/marvel-mobileapp` in the terminal where your folder is.
 ### Then you have successfully installed the app on your machine
+
+## How to start the marvel-mobileapp
+
+### Step 1, make sure you have a emulator on your machine. Preferably Android studio.
+### Step 2, choose any device in Android Studio
+### Step 3, start the device in Android Studio
+### Step 4, go back to where you have the marvel-mobileapp on your machine.
+### Step 5, go to your terminal and enter `npx expo start`
+### Step 6, wait until the terminal has done thinking.
+### Step 7, in the terminal, press a
+### Then you will have the marvel-mobileapp start in the emulator on your machine
