@@ -30,7 +30,12 @@ Repository: [https://github.com/AlbertTopallaj/marvel-api]
 
 Registration and login are handled by the marvel-api built with **Java with Spring Boot**. JWT-tokens are issued by the API for the authentication to work. 
 
-### The register and login is fully developed in Java with Spring boot and uses JWT tokens for autentication. In the app itself there are two different navigators which are shown based of if the user is logged in or not, this is based on conditional rendering. The user must first register a account in the register screen, if they doesnt have a account. Then they must navigate to the login screen where they login with the newly registered account. After login they will be able to see the other navigator which lets them write reviews and see their own profile. 
+The app uses two seperate navigators that are using conditional rendering based of if the user is logged in or not.
+
+- **NonAuthNavigator** - shows the Register and Login Screens.
+- **AppNavigator** - shows the user profile and the user can make reviews.
+
+New users must register first, then they can log in to experience and access the other authenticated features.
 
 ## What local-storage does the marvel-mobileapp use?
 
